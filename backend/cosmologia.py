@@ -19,6 +19,7 @@ import math
 from dataclasses import dataclass, asdict
 from typing import Any, Literal
 
+from .avisos import aviso
 from .calibracion import Calibracion, CalibracionSurvey, cargar
 from .fotometria import Fotometria
 
@@ -53,7 +54,8 @@ class Distancia:
     #: distancia según la ley de Hubble, para comparar (sólo si hay z)
     distancia_hubble_mpc: float | None
     diferencia_porcentual: float | None
-    avisos: list[str]
+    #: Advertencias como {codigo, params, texto}: la interfaz las traduce.
+    avisos: list[dict[str, Any]]
 
     def dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -125,10 +127,7 @@ def calcular(
         M_B = cal.M_B(dm15_B)
         m_B = scal.m_B(m_banda, foto.color_max) - A_B
         if foto.color_max is None:
-            avisos.append(
-                "Sin color en el máximo: la conversión g→B se hizo sólo con el "
-                "término constante, así que la distancia es menos precisa."
-            )
+            avisos.append(aviso("conversion_sin_color"))
         err_M = math.hypot(
             cal.dispersion_phillips,
             cal.pendiente * scal.b * (err_dm15 if err_dm15 == err_dm15 else 0.1),
@@ -149,10 +148,7 @@ def calcular(
     )
 
     if cal.sin_calibrar:
-        avisos.append(
-            "La calibración todavía no se ha generado; se están usando valores "
-            "por defecto. Corre scripts/calibrar_dm15.py."
-        )
+        avisos.append(aviso("sin_calibrar"))
 
     return Distancia(
         nivel=nivel,

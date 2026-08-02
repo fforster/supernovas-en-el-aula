@@ -19,6 +19,7 @@ from typing import Any, Sequence
 
 import numpy as np
 
+from .avisos import aviso
 from .brokers.base import CurvaDeLuz, Deteccion
 
 
@@ -74,7 +75,8 @@ class Fotometria:
     error_color_max: float | None
     banda_color: str | None
     n_detecciones: dict[str, int]
-    avisos: list[str]
+    #: Advertencias como {codigo, params, texto}: la interfaz las traduce.
+    avisos: list[dict[str, Any]]
 
     def dict(self) -> dict[str, Any]:
         d = asdict(self)
@@ -335,7 +337,7 @@ def medir(
             "Hace falta el corrimiento al rojo para corregir la dilatación temporal."
         )
 
-    avisos: list[str] = []
+    avisos: list[dict[str, Any]] = []
     maximo, p, t0 = buscar_maximo(curva, banda, z, n_bootstrap)
     dm15 = medir_dm15(curva, banda, z, maximo, p, t0, n_bootstrap)
 
@@ -343,20 +345,12 @@ def medir(
     if banda_color:
         color, err_color = color_en_maximo(curva, banda, banda_color, maximo.t_max, z)
         if color is None:
-            avisos.append(
-                f"No se pudo medir el color {banda}−{banda_color} en el máximo; "
-                "la distancia se calcula sin corrección de color."
-            )
+            avisos.append(aviso("sin_color", banda=banda, banda_color=banda_color))
 
     if not dm15.interpolado:
-        avisos.append(
-            "Δm15 está apenas al borde de los datos: tómalo como aproximado."
-        )
+        avisos.append(aviso("dm15_al_borde"))
     if maximo.n_puntos < 8:
-        avisos.append(
-            f"Sólo {maximo.n_puntos} mediciones definen el máximo; "
-            "el resultado puede variar bastante."
-        )
+        avisos.append(aviso("pocos_puntos_maximo", n=maximo.n_puntos))
 
     return Fotometria(
         oid=curva.oid,

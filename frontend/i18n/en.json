@@ -195,5 +195,10 @@
   "metodo.s8_p2": "In 1998, two independent teams took this same technique to far more distant supernovae and found they looked fainter than expected: they were further away than a decelerating universe predicted. Dark energy and accelerating expansion came out of that, and the 2011 Nobel Prize in Physics. The chain of reasoning the class follows is the same one; only the distance and the precision change.",
   "metodo.s9_titulo": "9. Details of this implementation",
   "metodo.s9_p1": "ZTF observes in the g band, but the Phillips relation is defined in the B band. The conversion was calibrated with 1500 synthetic SALT2 supernovae, measured with the same code the app uses, so the fit absorbs our own estimator's biases. Galactic extinction along the line of sight is also subtracted.",
-  "metodo.s9_p2": "On those simulations, where the answer is known exactly, the full chain recovers the distance with a −3 % bias and 4 % scatter. On the real catalogue supernovae, the median difference against Hubble's law is 7 %. It is worth telling the class that this residual is not a flaw in the method: galaxies also move on their own, and that peculiar velocity contaminates the reference distance."
+  "metodo.s9_p2": "On those simulations, where the answer is known exactly, the full chain recovers the distance with a −3 % bias and 4 % scatter. On the real catalogue supernovae, the median difference against Hubble's law is 7 %. It is worth telling the class that this residual is not a flaw in the method: galaxies also move on their own, and that peculiar velocity contaminates the reference distance.",
+  "aviso.sin_color": "The {banda}−{banda_color} colour at maximum could not be measured; the distance is computed without a colour correction.",
+  "aviso.dm15_al_borde": "Δm15 sits right at the edge of the data: treat it as approximate.",
+  "aviso.pocos_puntos_maximo": "Only {n} measurements define the peak; the result may vary quite a bit.",
+  "aviso.conversion_sin_color": "No colour at maximum: the g→B conversion used only the constant term, so the distance is less precise.",
+  "aviso.sin_calibrar": "The calibration has not been generated yet; default values are being used. Run scripts/calibrar_dm15.py."
 }

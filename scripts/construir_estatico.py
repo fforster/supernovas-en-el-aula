@@ -34,6 +34,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import logging
 import shutil
 import sys
 from pathlib import Path
@@ -44,6 +45,8 @@ sys.path.insert(0, str(RAIZ))
 from backend import calibracion, catalogo, cosmologia, esquema, fotometria, imagenes, informe  # noqa: E402
 from backend.app import jinja  # noqa: E402
 from backend.brokers import AlerceZTF  # noqa: E402
+
+log = logging.getLogger(__name__)
 
 IDIOMAS = ("es", "en")
 
@@ -261,7 +264,10 @@ def _hoja(ficha, curva, idioma: str, pauta: bool, papel: bool) -> str:
                 ("z", n(ficha["z"], 4)),
             ]
         except fotometria.MedicionImposible as exc:
-            filas_pauta = [("—", str(exc))]
+            # str(exc) está en español: en una hoja en inglés desentonaría.
+            # El detalle técnico va al log, no a la hoja del docente.
+            log.warning("hoja %s: no se pudo medir (%s)", ficha["oid"], exc)
+            filas_pauta = [("—", txt["no_medible"])]
 
     return jinja.get_template("hoja.html").render(
         idioma=idioma,

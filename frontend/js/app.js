@@ -534,9 +534,15 @@ async function cargarAnalisis() {
   const avisos = $('#docente-avisos');
   const ul = avisos.querySelector('ul');
   ul.innerHTML = '';
-  for (const aviso of d.avisos || []) {
+  for (const av of d.avisos || []) {
     const li = document.createElement('li');
-    li.textContent = aviso;
+    // Los avisos vienen del backend como {codigo, params, texto}: se traducen
+    // aquí. El `texto` (en español) es sólo el respaldo por si apareciera un
+    // código nuevo sin traducir; antes se mostraba siempre, y la interfaz en
+    // inglés terminaba con las advertencias en español.
+    const clave = `aviso.${av.codigo}`;
+    const traducido = T.t(clave, av.params || {});
+    li.textContent = traducido === clave ? av.texto : traducido;
     ul.append(li);
   }
   avisos.hidden = !(d.avisos || []).length;

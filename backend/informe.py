@@ -99,6 +99,7 @@ TEXTOS = {
                       "misma tiene esa precisión, y las galaxias además se mueven.",
         "eje_x": "Días desde la primera medición",
         "eje_y": "Magnitud (más chico = más brillante)",
+        "no_medible": "No se pudo medir esta curva de luz automáticamente.",
         "de_donde_distancia": "De dónde sale la distancia (para el docente)",
         "de_donde_texto": (
             "La luz se diluye con la distancia: al alejarse d, la energía se "
@@ -147,6 +148,7 @@ TEXTOS = {
                       "the technique, and galaxies also move on their own.",
         "eje_x": "Days since the first measurement",
         "eje_y": "Magnitude (smaller = brighter)",
+        "no_medible": "This light curve could not be measured automatically.",
         "de_donde_distancia": "Where the distance comes from (for teachers)",
         "de_donde_texto": (
             "Light thins out with distance: after travelling d, the energy is "

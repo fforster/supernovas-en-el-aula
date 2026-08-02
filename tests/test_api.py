@@ -209,3 +209,51 @@ def test_las_pantallas_del_diagrama_crecen_como_el_cuadrado():
     a = sorted(area(p) for p in poligonos)
     assert a[1] / a[0] == pytest.approx(4.0, rel=1e-6)
     assert a[2] / a[0] == pytest.approx(9.0, rel=1e-6)
+
+
+def test_todo_aviso_del_backend_esta_traducido():
+    """Regresión: la interfaz en inglés mostraba las advertencias en español.
+
+    Las advertencias nacen en Python y se leen en la página, que puede estar en
+    cualquiera de los dos idiomas. Se emiten como código + parámetros y se
+    traducen en el navegador; esta prueba comprueba que todo código que el
+    backend sabe emitir tiene su clave en LOS DOS idiomas, y que los parámetros
+    de la plantilla española y la inglesa coinciden.
+    """
+    import json
+    import re
+    from pathlib import Path
+
+    from backend.avisos import PLANTILLAS
+
+    raiz = Path(__file__).resolve().parent.parent / "frontend" / "i18n"
+    textos = {
+        lang: json.loads((raiz / f"{lang}.json").read_text(encoding="utf-8"))
+        for lang in ("es", "en")
+    }
+
+    for codigo, plantilla in PLANTILLAS.items():
+        clave = f"aviso.{codigo}"
+        esperados = set(re.findall(r"\{(\w+)\}", plantilla))
+        for lang, d in textos.items():
+            assert clave in d, f"falta '{clave}' en {lang}.json"
+            hallados = set(re.findall(r"\{(\w+)\}", d[clave]))
+            assert hallados == esperados, (
+                f"[{lang}] '{clave}' usa {sorted(hallados)} pero el backend "
+                f"entrega {sorted(esperados)}"
+            )
+
+
+def test_los_avisos_viajan_como_codigo_no_como_frase(cliente, oid):
+    """Si el backend volviera a mandar frases, la traducción sería imposible."""
+    d = cliente.get(f"/api/analisis/{oid}?nivel=docente").json()
+    for av in d["distancia"]["avisos"]:
+        assert isinstance(av, dict), f"aviso sin estructura: {av!r}"
+        assert av["codigo"] and isinstance(av["params"], dict)
+
+
+def test_un_aviso_desconocido_falla_temprano():
+    from backend.avisos import aviso
+
+    with pytest.raises(KeyError, match="Aviso desconocido"):
+        aviso("no_existe")

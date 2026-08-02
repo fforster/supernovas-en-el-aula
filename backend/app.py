@@ -243,7 +243,10 @@ async def api_hoja(
                 ("z", n(ficha["z"], 4)),
             ]
         except fotometria.MedicionImposible as exc:
-            filas_pauta = [("—", str(exc))]
+            # str(exc) está en español: en una hoja en inglés desentonaría.
+            # El detalle técnico va al log, no a la hoja del docente.
+            log.warning("hoja %s: no se pudo medir (%s)", oid, exc)
+            filas_pauta = [("—", txt["no_medible"])]
 
     plantilla = jinja.get_template("hoja.html")
     return HTMLResponse(plantilla.render(
