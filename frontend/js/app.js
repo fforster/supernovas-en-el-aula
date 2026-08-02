@@ -235,11 +235,29 @@ async function abrirObjeto() {
   $('#principal').focus();
 }
 
+/** Trae el esquema explicativo y lo inserta en línea.
+ *
+ * En línea y no como <img>: así hereda las clases y los colores del proyecto, y
+ * se ve bien igual en modo claro que en oscuro.
+ */
+async function pintarEsquema() {
+  const caja = $('#esquema-dibujo');
+  if (!caja || caja.dataset.idioma === estado.idioma) return;
+  try {
+    const svg = await (await fetch(rutas.urlEsquema(estado.idioma))).text();
+    caja.innerHTML = svg;
+    caja.dataset.idioma = estado.idioma;
+  } catch {
+    caja.innerHTML = '';
+  }
+}
+
 function aplicarModo() {
   const docente = estado.modo === 'docente';
   $('#panel-docente').hidden = !docente;
   $('#panel-estudiante').hidden = docente;
   $('#bloque-grafico').hidden = !docente;
+  if (!docente) pintarEsquema();
   if (docente) $('#cierre').hidden = true;
   pintarCuaderno();
   if (docente && estado.oid) cargarAnalisis();

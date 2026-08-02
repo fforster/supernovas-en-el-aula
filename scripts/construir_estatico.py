@@ -41,7 +41,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ))
 
-from backend import calibracion, catalogo, cosmologia, fotometria, imagenes, informe  # noqa: E402
+from backend import calibracion, catalogo, cosmologia, esquema, fotometria, imagenes, informe  # noqa: E402
 from backend.app import jinja  # noqa: E402
 from backend.brokers import AlerceZTF  # noqa: E402
 
@@ -104,6 +104,9 @@ async def construir(salida: Path, con_imagenes: bool = True) -> int:
     escribir(salida / ".nojekyll", "")
 
     json_a(salida / "api" / "calibracion.json", cal.crudo)
+
+    for idioma in IDIOMAS:
+        escribir(salida / "api" / f"esquema-{idioma}.svg", esquema.curva_esquematica(idioma))
 
     # ------------------------------------------------------------------ catálogo
     for idioma in IDIOMAS:
@@ -269,6 +272,7 @@ def _hoja(ficha, curva, idioma: str, pauta: bool, papel: bool) -> str:
         pauta_filas=filas_pauta,
         filas=informe.filas_tabla(curva, idioma),
         svg=informe.papel_milimetrado(informe.rangos_ejes(curva), idioma),
+        esquema=esquema.curva_esquematica(idioma),
     )
 
 

@@ -99,6 +99,14 @@ TEXTOS = {
                       "misma tiene esa precisión, y las galaxias además se mueven.",
         "eje_x": "Días desde la primera medición",
         "eje_y": "Magnitud (más chico = más brillante)",
+        "que_medimos": "Qué vamos a medir",
+        "que_medimos_texto": (
+            "Del gráfico salen tres cosas: el día del máximo t(máx), la magnitud "
+            "en el máximo m(máx), y Δm15, que es cuánta magnitud perdió la "
+            "supernova en los 15 días siguientes al máximo. Como todas las "
+            "supernovas de tipo Ia emiten casi la misma luz, comparar cuánta "
+            "emitió con cuánta nos llega da la distancia."
+        ),
     },
     "en": {
         "imprimir": "Print",
@@ -126,6 +134,14 @@ TEXTOS = {
                       "the technique, and galaxies also move on their own.",
         "eje_x": "Days since the first measurement",
         "eje_y": "Magnitude (smaller = brighter)",
+        "que_medimos": "What we are going to measure",
+        "que_medimos_texto": (
+            "Three things come out of the plot: the day of maximum t(peak), the "
+            "magnitude at maximum m(peak), and Δm15, the magnitude the supernova "
+            "lost in the 15 days after the peak. Since all Type Ia supernovae "
+            "give off almost the same light, comparing how much it gave off with "
+            "how much reaches us gives the distance."
+        ),
     },
 }
 

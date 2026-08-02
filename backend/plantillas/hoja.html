@@ -27,6 +27,19 @@
   .papel-linea { stroke: #bbb; stroke-width: 0.4; }
   .papel-linea--fuerte { stroke: #666; stroke-width: 0.9; }
   .papel-texto { font-size: 7px; fill: #333; }
+  /* El esquema explicativo se imprime en negro: muchas escuelas no tienen
+     impresora a color. */
+  .eje { stroke: #000; stroke-width: 1.2; }
+  .eje-titulo { fill: #000; font-size: 13px; font-weight: 600; }
+  .eje-texto, .esquema__nota { fill: #333; font-size: 12px; }
+  .esquema__curva { fill: none; stroke: #000; stroke-width: 3; stroke-linejoin: round; }
+  .esquema__guia { stroke: #888; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .esquema__flecha { stroke: #000; stroke-width: 2.2; }
+  .esquema__punta { fill: #000; stroke: none; }
+  .esquema__punto { fill: #000; stroke: #fff; stroke-width: 2; }
+  .esquema__punto--15 { fill: #555; }
+  .esquema__etiqueta { fill: #000; font-size: 13px; font-weight: 700; }
+  .esquema__dm15 { fill: #000; font-size: 17px; font-weight: 700; }
   @media screen { body { padding: 10mm; } .imprimir { margin-bottom: 6mm; } }
   @media print { .imprimir { display: none; } }
 </style>
@@ -41,6 +54,10 @@
 <div class="caja">
   <p style="margin:0">{{ historia }}</p>
 </div>
+
+<h2>{{ txt.que_medimos }}</h2>
+<p>{{ txt.que_medimos_texto }}</p>
+{{ esquema | safe }}
 
 <h2>{{ txt.pasos }}</h2>
 <ol>

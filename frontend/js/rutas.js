@@ -109,6 +109,10 @@ export function urlIdioma(idioma) {
   return ESTATICO ? `${BASE}i18n/${idioma}.json` : `/static/i18n/${idioma}.json`;
 }
 
+export function urlEsquema(idioma) {
+  return ESTATICO ? api(`esquema-${idioma}.svg`) : api(`esquema-${idioma}.svg`);
+}
+
 export function urlCalibracion() {
   return ESTATICO ? api('calibracion.json') : api('calibracion');
 }

@@ -230,6 +230,26 @@ summary { cursor: pointer; font-weight: 600; padding: 0.35rem 0; }
 .marca--r { background: var(--banda-r); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
 
 
+/* -------------------------------------------------- esquema explicativo */
+
+.esquema { margin-bottom: 2.5rem; }
+.esquema p { max-width: 62ch; }
+#esquema-dibujo { margin: 1rem 0; }
+#esquema-dibujo svg { display: block; width: 100%; height: auto; min-width: 22rem; }
+
+.esquema__curva {
+  fill: none; stroke: var(--banda-g); stroke-width: 3.5;
+  stroke-linejoin: round; stroke-linecap: round;
+}
+.esquema__guia { stroke: var(--borde); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.esquema__flecha { stroke: var(--acento); stroke-width: 2.5; }
+.esquema__punta { fill: var(--acento); stroke: none; }
+.esquema__punto { fill: var(--acento); stroke: var(--papel); stroke-width: 2; }
+.esquema__punto--15 { fill: var(--atencion); }
+.esquema__etiqueta { fill: var(--tinta); font-size: 14px; font-weight: 700; }
+.esquema__nota { fill: var(--tinta-suave); font-size: 13px; }
+.esquema__dm15 { fill: var(--acento); font-size: 18px; font-weight: 700; }
+
 /* ------------------------------------------------------------- cuaderno */
 
 #cuaderno {

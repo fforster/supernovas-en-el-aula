@@ -21,7 +21,7 @@ from fastapi.responses import (
 from fastapi.staticfiles import StaticFiles
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from . import calibracion, catalogo, cosmologia, fotometria, imagenes, informe
+from . import calibracion, catalogo, cosmologia, esquema, fotometria, imagenes, informe
 from .brokers import AlerceZTF, BrokerError
 
 log = logging.getLogger(__name__)
@@ -256,6 +256,7 @@ async def api_hoja(
         pauta_filas=filas_pauta,
         filas=informe.filas_tabla(curva, idioma),
         svg=informe.papel_milimetrado(informe.rangos_ejes(curva), idioma),
+        esquema=esquema.curva_esquematica(idioma),
     ))
 
 
@@ -290,6 +291,22 @@ async def api_estampilla(oid: str, candid: str, tipo: str):
         media_type="image/png",
         # son inmutables: un candid identifica una observación concreta
         headers={"Cache-Control": "public, max-age=604800"},
+    )
+
+
+@app.get("/api/esquema-{idioma}.svg")
+async def api_esquema(idioma: str):
+    """El dibujo que explica qué es el máximo y qué es Δm15.
+
+    Se genera en el servidor para que la página y la guía impresa usen
+    exactamente el mismo dibujo.
+    """
+    if idioma not in ("es", "en"):
+        raise HTTPException(404, "Idioma desconocido.")
+    return Response(
+        content=esquema.curva_esquematica(idioma),
+        media_type="image/svg+xml",
+        headers={"Cache-Control": "public, max-age=3600"},
     )
 
 
