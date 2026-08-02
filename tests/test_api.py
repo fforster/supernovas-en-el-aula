@@ -120,3 +120,92 @@ def test_toda_clave_usada_en_el_html_existe():
     usadas = set(re.findall(r'data-i18n(?:-aria-label)?="([^"]+)"', html))
     faltan = usadas - set(es)
     assert not faltan, f"claves usadas en el HTML pero sin traducir: {sorted(faltan)}"
+
+
+def test_rango_del_catalogo_se_calcula_no_se_escribe():
+    """La sección del docente cita el rango de distancias del catálogo.
+
+    Regresión: ese rango estaba escrito a mano en el texto y quedó desfasado en
+    cuanto se volvió a curar el catálogo (decía 215 Mpc cuando ya llegaba a
+    310). Ahora se calcula, y esta prueba comprueba que sigue cuadrando con los
+    objetos que hay de verdad.
+    """
+    import math
+
+    from backend import catalogo
+
+    r = catalogo.rango_modulo()
+    ds = [o["distancia_hubble_mpc"] for o in catalogo.objetos()]
+    assert r["d_min"] == pytest.approx(min(ds))
+    assert r["d_max"] == pytest.approx(max(ds))
+    assert r["mu_min"] == pytest.approx(5 * math.log10(min(ds) * 1e6) - 5)
+    assert r["mu_max"] == pytest.approx(5 * math.log10(max(ds) * 1e6) - 5)
+    # y el módulo tiene que ser coherente con la conversión que usa la app
+    from backend import cosmologia as C
+
+    assert C.modulo_a_mpc(r["mu_min"]) == pytest.approx(r["d_min"], rel=1e-9)
+
+
+def test_el_endpoint_del_catalogo_entrega_el_rango(cliente):
+    r = cliente.get("/api/catalogo").json()["rango_modulo"]
+    assert r["mu_min"] < r["mu_max"]
+    assert 25 < r["mu_min"] < 45, "módulo de distancia fuera de lo plausible"
+
+
+def test_los_marcadores_del_texto_del_docente_son_los_que_rellena_el_js():
+    """Si alguien añade un {marcador} al texto y no lo rellena, sale en pantalla."""
+    import json
+    import re
+    from pathlib import Path
+
+    raiz = Path(__file__).resolve().parent.parent
+    app_js = (raiz / "frontend" / "js" / "app.js").read_text(encoding="utf-8")
+
+    for lang in ("es", "en"):
+        textos = json.loads(
+            (raiz / "frontend" / "i18n" / f"{lang}.json").read_text(encoding="utf-8")
+        )
+        con_marcador = {
+            k: set(re.findall(r"\{([a-z_]+)\}", v))
+            for k, v in textos.items()
+            if k.startswith("metodo.") and re.search(r"\{[a-z_]+\}", str(v))
+        }
+        assert set(con_marcador) == {"metodo.s4_p5"}, (
+            f"[{lang}] claves de método con marcadores sin rellenar: "
+            f"{sorted(set(con_marcador) - {'metodo.s4_p5'})}"
+        )
+        for marcador in con_marcador["metodo.s4_p5"]:
+            assert f"{marcador}:" in app_js, (
+                f"[{lang}] el texto usa {{{marcador}}} pero app.js no lo rellena"
+            )
+
+
+def test_los_diagramas_se_generan_en_los_dos_idiomas():
+    from backend import esquema
+
+    for idioma in ("es", "en"):
+        for svg in (esquema.curva_esquematica(idioma), esquema.ley_inversa(idioma)):
+            assert svg.startswith("<svg") and svg.endswith("</svg>")
+            assert 'role="img"' in svg and "aria-label=" in svg, "falta texto alternativo"
+
+
+def test_las_pantallas_del_diagrama_crecen_como_el_cuadrado():
+    """El dibujo enseña que el área crece como d²: si no, enseña algo falso."""
+    import re
+
+    from backend import esquema
+
+    poligonos = re.findall(
+        r'class="ley__pantalla" points="([^"]+)"', esquema.ley_inversa("es")
+    )
+    assert len(poligonos) == 3
+
+    def area(pts):
+        p = [tuple(map(float, q.split(","))) for q in pts.split()]
+        ux, uy = p[1][0] - p[0][0], p[1][1] - p[0][1]
+        vx, vy = p[3][0] - p[0][0], p[3][1] - p[0][1]
+        return abs(ux * vy - uy * vx)
+
+    a = sorted(area(p) for p in poligonos)
+    assert a[1] / a[0] == pytest.approx(4.0, rel=1e-6)
+    assert a[2] / a[0] == pytest.approx(9.0, rel=1e-6)

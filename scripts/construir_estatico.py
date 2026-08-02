@@ -107,6 +107,7 @@ async def construir(salida: Path, con_imagenes: bool = True) -> int:
 
     for idioma in IDIOMAS:
         escribir(salida / "api" / f"esquema-{idioma}.svg", esquema.curva_esquematica(idioma))
+        escribir(salida / "api" / f"ley-inversa-{idioma}.svg", esquema.ley_inversa(idioma))
 
     # ------------------------------------------------------------------ catálogo
     for idioma in IDIOMAS:
@@ -116,6 +117,7 @@ async def construir(salida: Path, con_imagenes: bool = True) -> int:
             "clasificador": catalogo.cargar()["clasificador"],
             "version_clasificador": catalogo.cargar()["version_clasificador"],
             "criterios": catalogo.cargar()["criterios"],
+            "rango_modulo": catalogo.rango_modulo(),
             "objetos": catalogo.resumen(idioma, broker),
         }
         json_a(salida / "api" / f"catalogo-{idioma}.json", relativizar(datos))

@@ -113,6 +113,10 @@ export function urlEsquema(idioma) {
   return ESTATICO ? api(`esquema-${idioma}.svg`) : api(`esquema-${idioma}.svg`);
 }
 
+export function urlLeyInversa(idioma) {
+  return api(`ley-inversa-${idioma}.svg`);
+}
+
 export function urlCalibracion() {
   return ESTATICO ? api('calibracion.json') : api('calibracion');
 }

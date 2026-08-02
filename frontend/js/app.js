@@ -252,13 +252,60 @@ async function pintarEsquema() {
   }
 }
 
+/** Sección del docente: diagrama de la ley del inverso del cuadrado y tabla μ↔d.
+ *
+ * La tabla se calcula con la MISMA fórmula que usa el backend
+ * (d = 10^((μ+5)/5) pársecs) en vez de escribirla a mano: si alguien cambia la
+ * definición del módulo de distancia, la tabla lo sigue en vez de quedar
+ * contradiciendo al resto de la página.
+ */
+async function pintarMetodo() {
+  const caja = $('#metodo-ley');
+  if (caja && caja.dataset.idioma !== estado.idioma) {
+    try {
+      caja.innerHTML = await (await fetch(rutas.urlLeyInversa(estado.idioma))).text();
+      caja.dataset.idioma = estado.idioma;
+    } catch {
+      caja.innerHTML = '';
+    }
+  }
+
+  // El rango del catálogo lo entrega el servidor ya calculado: escrito a mano
+  // se desactualiza en cuanto se vuelve a curar el catálogo.
+  const r = estado.catalogo?.rango_modulo;
+  const nota = document.querySelector('[data-i18n="metodo.s4_p5"]');
+  if (nota && r?.mu_min) {
+    nota.textContent = T.t('metodo.s4_p5', {
+      mu_min: T.num(r.mu_min, 1),
+      mu_max: T.num(r.mu_max, 1),
+      d_min: T.entero(r.d_min),
+      d_max: T.entero(r.d_max),
+    });
+  }
+
+  const cuerpo = $('#tabla-modulo tbody');
+  if (!cuerpo || cuerpo.dataset.idioma === estado.idioma) return;
+  cuerpo.innerHTML = '';
+  for (const mu of [30, 33, 35, 37, 40]) {
+    const mpc = 10 ** ((mu + 5) / 5) / 1e6;
+    const fila = document.createElement('tr');
+    const a = document.createElement('td');
+    a.textContent = T.num(mu, 0);
+    const b = document.createElement('td');
+    b.textContent = `${mpc >= 100 ? T.entero(mpc) : T.num(mpc, 0)} Mpc`;
+    fila.append(a, b);
+    cuerpo.append(fila);
+  }
+  cuerpo.dataset.idioma = estado.idioma;
+}
+
 function aplicarModo() {
   const docente = estado.modo === 'docente';
   $('#panel-docente').hidden = !docente;
   $('#panel-estudiante').hidden = docente;
   $('#bloque-grafico').hidden = !docente;
   if (!docente) pintarEsquema();
-  if (docente) $('#cierre').hidden = true;
+  if (docente) { $('#cierre').hidden = true; pintarMetodo(); }
   pintarCuaderno();
   if (docente && estado.oid) cargarAnalisis();
 }
@@ -520,6 +567,10 @@ function conectar() {
     await T.cargar(estado.idioma);
     T.aplicar();
     await cargarCatalogo();
+    // T.aplicar() repone los textos crudos, incluido el de la sección del
+    // docente que lleva marcadores ({mu_min}...). aplicarModo() vuelve a
+    // rellenarlos; sin esta línea quedaban los marcadores a la vista.
+    aplicarModo();
     if (estado.oid) abrirObjeto();
   });
 

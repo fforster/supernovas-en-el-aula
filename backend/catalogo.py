@@ -76,6 +76,28 @@ def resumen(idioma: str = "es", broker=None) -> list[dict[str, Any]]:
     return salida
 
 
+def rango_modulo() -> dict[str, float]:
+    """Distancias y módulos de distancia que cubre el catálogo.
+
+    Se calcula, no se escribe a mano: la sección del docente cita este rango, y
+    una versión escrita a mano quedó desactualizada en cuanto se volvió a curar
+    el catálogo.  No revela ninguna respuesta concreta: es agregado, y el rango
+    de z ya va en ``criterios``.
+    """
+    import math
+
+    ds = [o["distancia_hubble_mpc"] for o in objetos() if o.get("distancia_hubble_mpc")]
+    if not ds:
+        return {}
+    mu = lambda d: 5 * math.log10(d * 1e6) - 5  # noqa: E731
+    return {
+        "d_min": min(ds),
+        "d_max": max(ds),
+        "mu_min": mu(min(ds)),
+        "mu_max": mu(max(ds)),
+    }
+
+
 def para_estudiante(o: dict[str, Any], idioma: str = "es") -> dict[str, Any]:
     """La ficha sin las respuestas."""
     limpio = {k: v for k, v in o.items() if k not in SECRETOS}

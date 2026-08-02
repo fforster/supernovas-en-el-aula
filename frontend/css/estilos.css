@@ -230,6 +230,40 @@ summary { cursor: pointer; font-weight: 600; padding: 0.35rem 0; }
 .marca--r { background: var(--banda-r); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
 
 
+/* -------------------------------------------- método (sección del docente) */
+
+.metodo h5 {
+  font-size: 1.02rem; margin: 1.75rem 0 0.4rem;
+  padding-top: 0.9rem; border-top: 1px solid var(--borde);
+}
+.metodo h5:first-of-type { border-top: 0; padding-top: 0; }
+.metodo p { max-width: 68ch; }
+.metodo .formula { white-space: pre-line; margin: 0.9rem 0; }
+
+/* La definición del módulo de distancia es la idea central de la sección:
+   se destaca para que no se pierda entre las demás fórmulas. */
+.formula--clave {
+  border-left: 5px solid var(--acento);
+  font-size: 1.1rem; font-weight: 700;
+}
+
+.tabla-modulo { max-width: 22rem; }
+.tabla-modulo td { font-variant-numeric: tabular-nums; }
+
+#metodo-ley { margin: 1rem 0; }
+#metodo-ley svg { display: block; width: 100%; height: auto; min-width: 21rem; }
+
+.ley__rayo { stroke: var(--borde); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.ley__pantalla {
+  fill: var(--banda-g); fill-opacity: 0.20;
+  stroke: var(--banda-g); stroke-width: 2;
+}
+.ley__celda { stroke: var(--banda-g); stroke-width: 1; stroke-opacity: 0.55; }
+.ley__fuente { fill: var(--atencion); stroke: var(--papel); stroke-width: 2; }
+.ley__etiqueta { fill: var(--tinta); font-size: 14px; font-weight: 700; }
+.ley__nota { fill: var(--tinta-suave); font-size: 12.5px; }
+.ley__brillo { fill: var(--acento); font-size: 14px; font-weight: 700; }
+
 /* -------------------------------------------------- esquema explicativo */
 
 .esquema { margin-bottom: 2.5rem; }

@@ -99,6 +99,19 @@ TEXTOS = {
                       "misma tiene esa precisión, y las galaxias además se mueven.",
         "eje_x": "Días desde la primera medición",
         "eje_y": "Magnitud (más chico = más brillante)",
+        "de_donde_distancia": "De dónde sale la distancia (para el docente)",
+        "de_donde_texto": (
+            "La luz se diluye con la distancia: al alejarse d, la energía se "
+            "reparte sobre una esfera de área 4πd², así que el flujo cae como "
+            "1/d². En magnitudes eso se escribe μ = m − M = 5·log₁₀(d/10 pc). "
+            "La luminosidad intrínseca se cancela al restar, de modo que μ —el "
+            "módulo de distancia— depende SÓLO de la distancia: medir μ y medir "
+            "la distancia son la misma operación, en distintas unidades "
+            "(d = 10^((μ+5)/5) pársecs). El problema es que hace falta M, que no "
+            "se puede medir; por eso se usan las SN Ia, que explotan todas con "
+            "casi la misma masa y por lo tanto tienen M_B ≈ −19,3. Δm15 corrige "
+            "el resto: las que se apagan más lento son algo más luminosas."
+        ),
         "que_medimos": "Qué vamos a medir",
         "que_medimos_texto": (
             "Del gráfico salen tres cosas: el día del máximo t(máx), la magnitud "
@@ -134,6 +147,19 @@ TEXTOS = {
                       "the technique, and galaxies also move on their own.",
         "eje_x": "Days since the first measurement",
         "eje_y": "Magnitude (smaller = brighter)",
+        "de_donde_distancia": "Where the distance comes from (for teachers)",
+        "de_donde_texto": (
+            "Light thins out with distance: after travelling d, the energy is "
+            "spread over a sphere of area 4πd², so the flux falls as 1/d². In "
+            "magnitudes that reads μ = m − M = 5·log₁₀(d/10 pc). The intrinsic "
+            "luminosity cancels in the subtraction, so μ — the distance modulus "
+            "— depends ONLY on distance: measuring μ and measuring the distance "
+            "are the same operation in different units "
+            "(d = 10^((μ+5)/5) parsecs). The catch is that you need M, which "
+            "cannot be measured; hence Type Ia supernovae, which all explode at "
+            "almost the same mass and so have M_B ≈ −19.3. Δm15 corrects the "
+            "rest: the ones that fade more slowly are slightly more luminous."
+        ),
         "que_medimos": "What we are going to measure",
         "que_medimos_texto": (
             "Three things come out of the plot: the day of maximum t(peak), the "

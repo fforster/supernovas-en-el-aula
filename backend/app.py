@@ -75,6 +75,7 @@ async def api_catalogo(idioma: str = Query("es", pattern="^(es|en)$")):
         "clasificador": datos["clasificador"],
         "version_clasificador": datos["version_clasificador"],
         "criterios": datos["criterios"],
+        "rango_modulo": catalogo.rango_modulo(),
         "objetos": catalogo.resumen(idioma, broker),
     }
 
@@ -291,6 +292,18 @@ async def api_estampilla(oid: str, candid: str, tipo: str):
         media_type="image/png",
         # son inmutables: un candid identifica una observación concreta
         headers={"Cache-Control": "public, max-age=604800"},
+    )
+
+
+@app.get("/api/ley-inversa-{idioma}.svg")
+async def api_ley_inversa(idioma: str):
+    """La ley del inverso del cuadrado, para la sección del docente."""
+    if idioma not in ("es", "en"):
+        raise HTTPException(404, "Idioma desconocido.")
+    return Response(
+        content=esquema.ley_inversa(idioma),
+        media_type="image/svg+xml",
+        headers={"Cache-Control": "public, max-age=3600"},
     )
 
 

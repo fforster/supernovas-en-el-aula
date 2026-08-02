@@ -62,6 +62,22 @@ La ficha también cuenta **qué había vivo en la Tierra** cuando esa luz salió
 a salir del agua" sí. Los períodos y sus fechas están en `backend/eras.py`,
 según la escala de la Comisión Internacional de Estratigrafía.
 
+### Para el docente: de dónde sale la distancia
+
+El panel de docente incluye una sección con la física completa, pensada para
+leerse antes de entrar a la sala: la ley del inverso del cuadrado (con dibujo),
+por qué los astrónomos miden en magnitudes, la diferencia entre magnitud
+aparente y absoluta, y la derivación del **módulo de distancia**
+
+    μ ≡ m − M = 5·log₁₀(d / 10 pc)
+
+con el punto que suele quedar implícito: al restar m y M la luminosidad
+intrínseca se cancela, así que μ depende **sólo** de la distancia. Medir el
+módulo de distancia y medir la distancia son la misma operación en distintas
+unidades, no un paso intermedio. De ahí sigue por qué hace falta una vela
+estándar (M no se puede medir), por qué las SN Ia lo son, qué añade la relación
+de Phillips y cómo esto conecta con el diagrama de Hubble y el Nobel de 2011.
+
 ### La ciencia, en corto
 
 Las supernovas de tipo Ia explotan siempre de forma parecida, así que sirven como
