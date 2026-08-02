@@ -1,0 +1,67 @@
+{
+  "surveys": {
+    "ZTF": {
+      "banda": "g",
+      "banda_color": "r",
+      "R_B": 4.1,
+      "dm15": {
+        "a": 0.22650259069530998,
+        "b": 0.9128315988150993,
+        "dispersion": 0.0828958732048331,
+        "n": 1500
+      },
+      "color": {
+        "c0": -0.04298353030048199,
+        "c1": 0.12895763433311963,
+        "c2": 1.7782191143715653,
+        "dispersion": 0.027621531237604902,
+        "n": 1373
+      },
+      "procedencia": {
+        "metodo": "simulaciones SALT2 medidas con backend.fotometria",
+        "modelo": "salt2 T23",
+        "sncosmo": "2.13.0",
+        "n_simulaciones": 1500,
+        "semilla": 20260801,
+        "rango_z": [
+          0.005,
+          0.08
+        ],
+        "rango_x1": [
+          -3.0,
+          2.0
+        ],
+        "rango_c": [
+          -0.2,
+          0.4
+        ]
+      },
+      "validacion": {
+        "estudiante": {
+          "sesgo_porcentual": 0.0914973612724424,
+          "dispersion_porcentual": 5.538245178329652,
+          "fraccion_dentro_15pct": 0.986,
+          "n": 1500
+        },
+        "docente": {
+          "sesgo_porcentual": -3.4025870022283455,
+          "dispersion_porcentual": 3.88320102318095,
+          "fraccion_dentro_15pct": 0.9986666666666667,
+          "n": 1500
+        }
+      }
+    }
+  },
+  "generado": "2026-08-01T19:41:08+00:00",
+  "sin_calibrar": false,
+  "H0": 70.0,
+  "H0_unidades": "km/s/Mpc",
+  "c_km_s": 299792.458,
+  "phillips": {
+    "M_B_0": -19.3,
+    "pendiente": 0.6,
+    "dm15_ref": 1.1,
+    "dispersion": 0.15,
+    "fuente": "Phillips et al. (1999), forma simplificada M_B = -19.3 + 0.6·(Δm15(B) - 1.1), para H0 = 70 km/s/Mpc"
+  }
+}

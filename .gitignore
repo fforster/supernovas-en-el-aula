@@ -1,0 +1,13 @@
+# Caché de respuestas de ALeRCE, NED e IRSA: se regenera solo.
+cache/
+
+# El sitio estático es un artefacto de construcción: lo arma GitHub Actions.
+sitio/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+.DS_Store

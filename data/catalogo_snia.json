@@ -1,0 +1,1226 @@
+{
+  "generado": "2026-08-02T03:54:12+00:00",
+  "survey": "ZTF",
+  "clasificador": "lc_classifier_BHRF_forced_phot",
+  "version_clasificador": "2.1.0",
+  "criterios": {
+    "z": [
+      0.015,
+      0.07
+    ],
+    "mag_max_g": [
+      14.0,
+      18.3
+    ],
+    "n_min_g": 8,
+    "n_min_antes_del_maximo": 2,
+    "hueco_maximo_dias": 5.0,
+    "ventana_critica_dias": [
+      -8.0,
+      20.0
+    ],
+    "primera_deteccion_desde_mjd": 60310.0
+  },
+  "objetos": [
+    {
+      "oid": "ZTF25aaxjntk",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025oxy",
+      "host": null,
+      "ra": 316.9606550572033,
+      "dec": 18.15216426382388,
+      "z": 0.01633,
+      "z_fuente": "NED, SN 2025oxy",
+      "ebv": 0.0828,
+      "t_max": 60865.05155400021,
+      "mag_max": 15.69331800507259,
+      "dm15_g": 1.2541991182235481,
+      "error_dm15": 0.027114352605323206,
+      "color_max": -0.016192137282640573,
+      "n_g": 36,
+      "n_r": 38,
+      "n_antes": 7,
+      "hueco_max": 3.0644675996154547,
+      "candid_estampilla": "3110431602415015017",
+      "distancia_mpc": 77.47975767769893,
+      "distancia_hubble_mpc": 70.50833573773683,
+      "diferencia_porcentual": 9.88737270142503,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.80808,
+        "ranking": 1
+      },
+      "dificultad": "facil",
+      "textos": {
+        "es": {
+          "historia": "SN 2025oxy es una supernova de tipo Ia que alcanzó su punto más brillante en julio de 2025. Su luz viajó unos 230 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Triásico: recién aparecían los primeros dinosaurios y también los primeros mamíferos, del tamaño de un ratón. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 15,7, unas 7.539 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025oxy is a Type Ia supernova that reached its brightest point in July 2025. Its light travelled about 230 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Triassic: the first dinosaurs were only just appearing, and so were the first mammals, about the size of a mouse. The first human being was still a very long way off. At maximum it reached magnitude 15.7, about 7,539 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aaprggu",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025kfm",
+      "host": null,
+      "ra": 215.30707049586272,
+      "dec": 29.991112317207417,
+      "z": 0.030214,
+      "z_fuente": "NED, SN 2025kfm",
+      "ebv": 0.0176,
+      "t_max": 60817.34833776008,
+      "mag_max": 16.44216450451498,
+      "dm15_g": 0.825319610136237,
+      "error_dm15": 0.046355234005961254,
+      "color_max": null,
+      "n_g": 19,
+      "n_r": 14,
+      "n_antes": 4,
+      "hueco_max": 4.0347570003941655,
+      "candid_estampilla": "3062328420315015008",
+      "distancia_mpc": 137.98076410852545,
+      "distancia_hubble_mpc": 131.35382091914377,
+      "diferencia_porcentual": 5.045108808415221,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.57348,
+        "ranking": 1
+      },
+      "dificultad": "facil",
+      "textos": {
+        "es": {
+          "historia": "SN 2025kfm es una supernova de tipo Ia que alcanzó su punto más brillante en mayo de 2025. Su luz viajó unos 428 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Silúrico: las plantas recién colonizaban la tierra firme, y en el mar cazaban escorpiones marinos de dos metros. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 16,4, unas 15.027 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025kfm is a Type Ia supernova that reached its brightest point in May 2025. Its light travelled about 428 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Silurian: plants were only just colonising dry land, and two-metre sea scorpions were hunting in the ocean. The first human being was still a very long way off. At maximum it reached magnitude 16.4, about 15,027 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aaxeojh",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025ows",
+      "host": null,
+      "ra": 332.5443326834492,
+      "dec": -7.65005083377538,
+      "z": 0.049,
+      "z_fuente": "NED, SN 2025ows",
+      "ebv": 0.0497,
+      "t_max": 60864.700920999974,
+      "mag_max": 17.307837910478238,
+      "dm15_g": 0.9478673329079896,
+      "error_dm15": 0.037676893974718795,
+      "color_max": -0.13112497286709157,
+      "n_g": 47,
+      "n_r": 72,
+      "n_antes": 5,
+      "hueco_max": 2.941898100078106,
+      "candid_estampilla": "3110444735015015031",
+      "distancia_mpc": 186.13389334441445,
+      "distancia_hubble_mpc": 214.9961612547,
+      "diferencia_porcentual": -13.424550346316758,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.781696,
+        "ranking": 1
+      },
+      "dificultad": "facil",
+      "textos": {
+        "es": {
+          "historia": "SN 2025ows es una supernova de tipo Ia que alcanzó su punto más brillante en julio de 2025. Su luz viajó unos 701 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Criogénico: la Tierra era casi una bola de nieve, congelada casi de polo a polo, y la única vida eran microbios y algas: no existía ni un solo animal. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,3, unas 33.353 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025ows is a Type Ia supernova that reached its brightest point in July 2025. Its light travelled about 701 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Cryogenian: Earth was almost a snowball, frozen nearly from pole to pole, and the only life was microbes and algae: not a single animal existed. The first human being was still a very long way off. At maximum it reached magnitude 17.3, about 33,353 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25ackdapv",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "UGC 00525",
+      "ra": 12.900565094470712,
+      "dec": 29.711111755124133,
+      "z": 0.016455,
+      "z_fuente": "NED, galaxia anfitriona UGC 00525",
+      "ebv": 0.0509,
+      "t_max": 61050.69903034991,
+      "mag_max": 15.266287970652195,
+      "dm15_g": 0.7927479788607119,
+      "error_dm15": 0.02897283563789849,
+      "color_max": 0.05794033312203872,
+      "n_g": 21,
+      "n_r": 37,
+      "n_antes": 3,
+      "hueco_max": 4.927002300042659,
+      "candid_estampilla": "3295143851415015012",
+      "distancia_mpc": 76.27803528032106,
+      "distancia_hubble_mpc": 71.05245503392928,
+      "diferencia_porcentual": 7.354538620652086,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.582,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25ackdapv es una supernova de tipo Ia que alcanzó su punto más brillante en enero de 2026 en la galaxia UGC 00525. Su luz viajó unos 232 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Triásico: recién aparecían los primeros dinosaurios y también los primeros mamíferos, del tamaño de un ratón. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 15,3, unas 5.088 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25ackdapv is a Type Ia supernova that reached its brightest point in January 2026 in the galaxy UGC 00525. Its light travelled about 232 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Triassic: the first dinosaurs were only just appearing, and so were the first mammals, about the size of a mouse. The first human being was still a very long way off. At maximum it reached magnitude 15.3, about 5,088 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abxedzr",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "MCG -04-15-006",
+      "ra": 90.71657616382758,
+      "dec": -23.691104158296802,
+      "z": 0.038733,
+      "z_fuente": "NED, galaxia anfitriona MCG -04-15-006",
+      "ebv": 0.03,
+      "t_max": 60974.50349680012,
+      "mag_max": 16.891915509411277,
+      "dm15_g": 1.094765844037461,
+      "error_dm15": 0.06955175691609243,
+      "color_max": null,
+      "n_g": 19,
+      "n_r": 4,
+      "n_antes": 6,
+      "hueco_max": 4.916550999972969,
+      "candid_estampilla": "3219482083815015002",
+      "distancia_mpc": 154.91221447877723,
+      "distancia_hubble_mpc": 169.09631981585875,
+      "diferencia_porcentual": -8.388180980241096,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.69438,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25abxedzr es una supernova de tipo Ia que alcanzó su punto más brillante en octubre de 2025 en la galaxia MCG -04-15-006. Su luz viajó unos 552 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Ediacárico: los primeros animales eran cuerpos blandos y planos pegados al fondo del mar, sin huesos ni conchas. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 16,9, unas 22.739 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25abxedzr is a Type Ia supernova that reached its brightest point in October 2025 in the galaxy MCG -04-15-006. Its light travelled about 552 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Ediacaran: the first animals were soft, flat bodies stuck to the sea floor, with no bones and no shells. The first human being was still a very long way off. At maximum it reached magnitude 16.9, about 22,739 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aapqzzl",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025jus",
+      "host": null,
+      "ra": 218.5871198485909,
+      "dec": 3.673457872976606,
+      "z": 0.033575,
+      "z_fuente": "NED, SN 2025jus",
+      "ebv": 0.0323,
+      "t_max": 60815.91883544998,
+      "mag_max": 16.998651343189664,
+      "dm15_g": 1.2311925395787817,
+      "error_dm15": 0.05672432753703323,
+      "color_max": null,
+      "n_g": 19,
+      "n_r": 21,
+      "n_antes": 2,
+      "hueco_max": 4.082534700166434,
+      "candid_estampilla": "3063325052515015009",
+      "distancia_mpc": 156.5318352625612,
+      "distancia_hubble_mpc": 146.20724131517517,
+      "diferencia_porcentual": 7.061616001036209,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.70432,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025jus es una supernova de tipo Ia que alcanzó su punto más brillante en mayo de 2025. Su luz viajó unos 477 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Ordovícico: casi toda la vida estaba en el mar —trilobites, corales y moluscos con conchas en punta— y en tierra sólo había musgos. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,0, unas 25.088 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025jus is a Type Ia supernova that reached its brightest point in May 2025. Its light travelled about 477 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Ordovician: almost all life was in the sea — trilobites, corals and molluscs with cone-shaped shells — and on land there were only mosses. The first human being was still a very long way off. At maximum it reached magnitude 17.0, about 25,088 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abikaaq",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J013956.95+434702.8",
+      "ra": 24.989546080691635,
+      "dec": 43.784035916592615,
+      "z": 0.040064,
+      "z_fuente": "NED, galaxia anfitriona WISEA J013956.95+434702.8",
+      "ebv": 0.0621,
+      "t_max": 60913.21903416012,
+      "mag_max": 17.047393680984822,
+      "dm15_g": 1.1636644073885272,
+      "error_dm15": 0.05002718967497186,
+      "color_max": -0.02678306410239628,
+      "n_g": 25,
+      "n_r": 35,
+      "n_antes": 5,
+      "hueco_max": 4.043368099723011,
+      "candid_estampilla": "3157402186115015012",
+      "distancia_mpc": 153.6814275908593,
+      "distancia_hubble_mpc": 175.02124409113478,
+      "diferencia_porcentual": -12.192700726755024,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.6468,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25abikaaq es una supernova de tipo Ia que alcanzó su punto más brillante en agosto de 2025 en la galaxia WISEA J013956.95+434702.8. Su luz viajó unos 571 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Ediacárico: los primeros animales eran cuerpos blandos y planos pegados al fondo del mar, sin huesos ni conchas. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,0, unas 26.240 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25abikaaq is a Type Ia supernova that reached its brightest point in August 2025 in the galaxy WISEA J013956.95+434702.8. Its light travelled about 571 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Ediacaran: the first animals were soft, flat bodies stuck to the sea floor, with no bones and no shells. The first human being was still a very long way off. At maximum it reached magnitude 17.0, about 26,240 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25accsisb",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "KUG 0204-092",
+      "ra": 31.790836706433485,
+      "dec": -9.025194905179301,
+      "z": 0.040587,
+      "z_fuente": "NED, galaxia anfitriona KUG 0204-092",
+      "ebv": 0.0177,
+      "t_max": 61003.513525849936,
+      "mag_max": 17.198747576693805,
+      "dm15_g": 1.08580064512687,
+      "error_dm15": 0.1433988199634962,
+      "color_max": 0.11661723205502383,
+      "n_g": 17,
+      "n_r": 22,
+      "n_antes": 5,
+      "hueco_max": 3.8915392998605967,
+      "candid_estampilla": "3250189904215015002",
+      "distancia_mpc": 184.30107067263356,
+      "distancia_hubble_mpc": 177.35144622505098,
+      "diferencia_porcentual": 3.9185609114028983,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.694,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25accsisb es una supernova de tipo Ia que alcanzó su punto más brillante en noviembre de 2025 en la galaxia KUG 0204-092. Su luz viajó unos 578 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Ediacárico: los primeros animales eran cuerpos blandos y planos pegados al fondo del mar, sin huesos ni conchas. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,2, unas 30.165 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25accsisb is a Type Ia supernova that reached its brightest point in November 2025 in the galaxy KUG 0204-092. Its light travelled about 578 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Ediacaran: the first animals were soft, flat bodies stuck to the sea floor, with no bones and no shells. The first human being was still a very long way off. At maximum it reached magnitude 17.2, about 30,165 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aascfmn",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025mhp",
+      "host": null,
+      "ra": 276.7629988140043,
+      "dec": 51.05352190437344,
+      "z": 0.0463,
+      "z_fuente": "NED, SN 2025mhp",
+      "ebv": 0.0338,
+      "t_max": 60838.475798800144,
+      "mag_max": 17.229201915819587,
+      "dm15_g": 0.8703658101918172,
+      "error_dm15": 0.041361593026410653,
+      "color_max": -0.07649099631820278,
+      "n_g": 30,
+      "n_r": 38,
+      "n_antes": 8,
+      "hueco_max": 4.086944399867207,
+      "candid_estampilla": "3084423484915015028",
+      "distancia_mpc": 189.2495506287433,
+      "distancia_hubble_mpc": 202.881740750643,
+      "diferencia_porcentual": -6.719278960966079,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.76,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025mhp es una supernova de tipo Ia que alcanzó su punto más brillante en junio de 2025. Su luz viajó unos 662 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Criogénico: la Tierra era casi una bola de nieve, congelada casi de polo a polo, y la única vida eran microbios y algas: no existía ni un solo animal. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,2, unas 31.023 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025mhp is a Type Ia supernova that reached its brightest point in June 2025. Its light travelled about 662 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Cryogenian: Earth was almost a snowball, frozen nearly from pole to pole, and the only life was microbes and algae: not a single animal existed. The first human being was still a very long way off. At maximum it reached magnitude 17.2, about 31,023 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF26aahajej",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J081506.71+174917.3",
+      "ra": 123.77661184081336,
+      "dec": 17.822109657238663,
+      "z": 0.044289,
+      "z_fuente": "NED, galaxia anfitriona WISEA J081506.71+174917.3",
+      "ebv": 0.0424,
+      "t_max": 61102.477833119796,
+      "mag_max": 17.26329162775487,
+      "dm15_g": 0.9334924448290565,
+      "error_dm15": 0.033792682019675245,
+      "color_max": -0.11340873939987262,
+      "n_g": 32,
+      "n_r": 34,
+      "n_antes": 8,
+      "hueco_max": 3.952581000048667,
+      "candid_estampilla": "3347256202715015003",
+      "distancia_mpc": 185.7521101033107,
+      "distancia_hubble_mpc": 193.8790278869267,
+      "diferencia_porcentual": -4.19174671556314,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.719112,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF26aahajej es una supernova de tipo Ia que alcanzó su punto más brillante en marzo de 2026 en la galaxia WISEA J081506.71+174917.3. Su luz viajó unos 632 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Ediacárico: los primeros animales eran cuerpos blandos y planos pegados al fondo del mar, sin huesos ni conchas. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,3, unas 32.012 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF26aahajej is a Type Ia supernova that reached its brightest point in March 2026 in the galaxy WISEA J081506.71+174917.3. Its light travelled about 632 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Ediacaran: the first animals were soft, flat bodies stuck to the sea floor, with no bones and no shells. The first human being was still a very long way off. At maximum it reached magnitude 17.3, about 32,012 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF18aakitiq",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025ndx",
+      "host": null,
+      "ra": 212.4829422186805,
+      "dec": 61.68878026746681,
+      "z": 0.036713,
+      "z_fuente": "NED, SN 2025ndx",
+      "ebv": 0.0139,
+      "t_max": 60842.735505619865,
+      "mag_max": 17.3836691962221,
+      "dm15_g": 1.2197891716413807,
+      "error_dm15": 0.06885114994178816,
+      "color_max": -0.013116028634215127,
+      "n_g": 21,
+      "n_r": 29,
+      "n_antes": 4,
+      "hueco_max": 3.0746297002770007,
+      "candid_estampilla": "3089196931715015006",
+      "distancia_mpc": 193.912179602641,
+      "distancia_hubble_mpc": 160.11881855351407,
+      "diferencia_porcentual": 21.10517761398089,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.57216,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025ndx es una supernova de tipo Ia que alcanzó su punto más brillante en junio de 2025. Su luz viajó unos 522 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Cámbrico: la vida entera vivía en el mar: trilobites y animales tan extraños como el Anomalocaris. En tierra firme no había absolutamente nada. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,4, unas 35.766 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025ndx is a Type Ia supernova that reached its brightest point in June 2025. Its light travelled about 522 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Cambrian: all life lived in the sea: trilobites and creatures as odd as Anomalocaris. On dry land there was nothing at all. The first human being was still a very long way off. At maximum it reached magnitude 17.4, about 35,766 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aatnwif",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025mvg",
+      "host": null,
+      "ra": 276.30610828257784,
+      "dec": 50.882701467065104,
+      "z": 0.0461,
+      "z_fuente": "NED, SN 2025mvg",
+      "ebv": 0.0348,
+      "t_max": 60842.07107650017,
+      "mag_max": 17.40436784557902,
+      "dm15_g": 1.1741272881286804,
+      "error_dm15": 0.0600291728967986,
+      "color_max": null,
+      "n_g": 23,
+      "n_r": 0,
+      "n_antes": 6,
+      "hueco_max": 4.086944399867207,
+      "candid_estampilla": "3086240854915015022",
+      "distancia_mpc": 190.52277278448722,
+      "distancia_hubble_mpc": 201.985618266187,
+      "diferencia_porcentual": -5.675080028021332,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.5922,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025mvg es una supernova de tipo Ia que alcanzó su punto más brillante en junio de 2025. Su luz viajó unos 659 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Criogénico: la Tierra era casi una bola de nieve, congelada casi de polo a polo, y la única vida eran microbios y algas: no existía ni un solo animal. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,4, unas 36.454 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025mvg is a Type Ia supernova that reached its brightest point in June 2025. Its light travelled about 659 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Cryogenian: Earth was almost a snowball, frozen nearly from pole to pole, and the only life was microbes and algae: not a single animal existed. The first human being was still a very long way off. At maximum it reached magnitude 17.4, about 36,454 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abuomiz",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J082751.89+560415.3",
+      "ra": 126.96365308506314,
+      "dec": 56.07163004875458,
+      "z": 0.044941,
+      "z_fuente": "NED, galaxia anfitriona WISEA J082751.89+560415.3",
+      "ebv": 0.041,
+      "t_max": 60961.03538033977,
+      "mag_max": 17.44306104237196,
+      "dm15_g": 0.8764817321603395,
+      "error_dm15": 0.0455028048299932,
+      "color_max": -0.07942197651538052,
+      "n_g": 23,
+      "n_r": 21,
+      "n_antes": 6,
+      "hueco_max": 4.8473612000234425,
+      "candid_estampilla": "3207516053715015009",
+      "distancia_mpc": 205.66346618214774,
+      "distancia_hubble_mpc": 196.79596130736834,
+      "diferencia_porcentual": 4.505938442979311,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.81672,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25abuomiz es una supernova de tipo Ia que alcanzó su punto más brillante en octubre de 2025 en la galaxia WISEA J082751.89+560415.3. Su luz viajó unos 642 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Criogénico: la Tierra era casi una bola de nieve, congelada casi de polo a polo, y la única vida eran microbios y algas: no existía ni un solo animal. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,4, unas 37.777 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25abuomiz is a Type Ia supernova that reached its brightest point in October 2025 in the galaxy WISEA J082751.89+560415.3. Its light travelled about 642 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Cryogenian: Earth was almost a snowball, frozen nearly from pole to pole, and the only life was microbes and algae: not a single animal existed. The first human being was still a very long way off. At maximum it reached magnitude 17.4, about 37,777 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aavczxs",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J202645.29+014944.5",
+      "ra": 306.69033797049696,
+      "dec": 1.8302112220480065,
+      "z": 0.062269,
+      "z_fuente": "NED, galaxia anfitriona WISEA J202645.29+014944.5",
+      "ebv": 0.0875,
+      "t_max": 60856.44491810021,
+      "mag_max": 17.509494967887033,
+      "dm15_g": 0.8847493189650208,
+      "error_dm15": 0.04048963256451335,
+      "color_max": 0.12269653892664323,
+      "n_g": 24,
+      "n_r": 36,
+      "n_antes": 6,
+      "hueco_max": 3.058819499798119,
+      "candid_estampilla": "3099317161215015010",
+      "distancia_mpc": 196.1648775328142,
+      "distancia_hubble_mpc": 274.98554938190784,
+      "diferencia_porcentual": -28.66356869524996,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.589632,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25aavczxs es una supernova de tipo Ia que alcanzó su punto más brillante en junio de 2025 en la galaxia WISEA J202645.29+014944.5. Su luz viajó unos 897 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,5, unas 40.160 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25aavczxs is a Type Ia supernova that reached its brightest point in June 2025 in the galaxy WISEA J202645.29+014944.5. Its light travelled about 897 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 17.5, about 40,160 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aaylgpw",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J205552.82+152742.1",
+      "ra": 313.9699435548359,
+      "dec": 15.46176480672347,
+      "z": 0.052014,
+      "z_fuente": "NED, galaxia anfitriona WISEA J205552.82+152742.1",
+      "ebv": 0.0764,
+      "t_max": 60921.70963792003,
+      "mag_max": 17.765381414053284,
+      "dm15_g": 1.4372084248830248,
+      "error_dm15": 0.06351865896537201,
+      "color_max": 0.01844703773345202,
+      "n_g": 33,
+      "n_r": 38,
+      "n_antes": 12,
+      "hueco_max": 4.038020899984986,
+      "candid_estampilla": "3168361885215015000",
+      "distancia_mpc": 194.8478111364676,
+      "distancia_hubble_mpc": 228.55632274167257,
+      "diferencia_porcentual": -14.748448522819581,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.508572,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25aaylgpw es una supernova de tipo Ia que alcanzó su punto más brillante en septiembre de 2025 en la galaxia WISEA J205552.82+152742.1. Su luz viajó unos 745 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,8, unas 50.834 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25aaylgpw is a Type Ia supernova that reached its brightest point in September 2025 in the galaxy WISEA J205552.82+152742.1. Its light travelled about 745 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 17.8, about 50,834 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abvrbqg",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J235922.59+515648.9",
+      "ra": 359.8435949954676,
+      "dec": 51.94660259752525,
+      "z": 0.032977,
+      "z_fuente": "NED, galaxia anfitriona WISEA J235922.59+515648.9",
+      "ebv": 0.2243,
+      "t_max": 60965.39749673013,
+      "mag_max": 17.770078355657464,
+      "dm15_g": 0.9044858778332774,
+      "error_dm15": 0.061508387983685645,
+      "color_max": null,
+      "n_g": 19,
+      "n_r": 9,
+      "n_antes": 5,
+      "hueco_max": 4.15606479998678,
+      "candid_estampilla": "3212220050215015000",
+      "distancia_mpc": 168.74676638114613,
+      "distancia_hubble_mpc": 143.56093453809257,
+      "diferencia_porcentual": 17.543652752114635,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.516532,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25abvrbqg es una supernova de tipo Ia que alcanzó su punto más brillante en octubre de 2025 en la galaxia WISEA J235922.59+515648.9. Su luz viajó unos 468 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Ordovícico: casi toda la vida estaba en el mar —trilobites, corales y moluscos con conchas en punta— y en tierra sólo había musgos. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,8, unas 51.054 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25abvrbqg is a Type Ia supernova that reached its brightest point in October 2025 in the galaxy WISEA J235922.59+515648.9. Its light travelled about 468 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Ordovician: almost all life was in the sea — trilobites, corals and molluscs with cone-shaped shells — and on land there were only mosses. The first human being was still a very long way off. At maximum it reached magnitude 17.8, about 51,054 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abckwuq",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025rvy",
+      "host": null,
+      "ra": 277.626621107501,
+      "dec": 26.83102795822435,
+      "z": 0.054,
+      "z_fuente": "NED, SN 2025rvy",
+      "ebv": 0.0848,
+      "t_max": 60891.8961804001,
+      "mag_max": 17.834261357727215,
+      "dm15_g": 0.8620138168699789,
+      "error_dm15": 0.1012453138378023,
+      "color_max": -0.079502378379253,
+      "n_g": 17,
+      "n_r": 28,
+      "n_antes": 7,
+      "hueco_max": 4.870301000308245,
+      "candid_estampilla": "3136303814315015017",
+      "distancia_mpc": 227.54324789021572,
+      "distancia_hubble_mpc": 237.51271622519997,
+      "diferencia_porcentual": -4.197446138223435,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.874248,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025rvy es una supernova de tipo Ia que alcanzó su punto más brillante en agosto de 2025. Su luz viajó unos 775 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,8, unas 54.163 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025rvy is a Type Ia supernova that reached its brightest point in August 2025. Its light travelled about 775 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 17.8, about 54,163 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abakvtg",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025qpv",
+      "host": null,
+      "ra": 322.744881593178,
+      "dec": 22.541522329789466,
+      "z": 0.0456,
+      "z_fuente": "NED, SN 2025qpv",
+      "ebv": 0.0786,
+      "t_max": 60874.47646440013,
+      "mag_max": 17.883758326247108,
+      "dm15_g": 1.0133561042798718,
+      "error_dm15": 0.07919968136683948,
+      "color_max": 0.03199925168133788,
+      "n_g": 19,
+      "n_r": 34,
+      "n_antes": 5,
+      "hueco_max": 4.011180500034243,
+      "candid_estampilla": "3121302486015015005",
+      "distancia_mpc": 228.21550184686362,
+      "distancia_hubble_mpc": 199.746061536192,
+      "diferencia_porcentual": 14.252816847411651,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.64,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025qpv es una supernova de tipo Ia que alcanzó su punto más brillante en julio de 2025. Su luz viajó unos 651 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Criogénico: la Tierra era casi una bola de nieve, congelada casi de polo a polo, y la única vida eran microbios y algas: no existía ni un solo animal. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,9, unas 56.690 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025qpv is a Type Ia supernova that reached its brightest point in July 2025. Its light travelled about 651 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Cryogenian: Earth was almost a snowball, frozen nearly from pole to pole, and the only life was microbes and algae: not a single animal existed. The first human being was still a very long way off. At maximum it reached magnitude 17.9, about 56,690 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aboeejj",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J222838.22+001558.0",
+      "ra": 337.15935838453396,
+      "dec": 0.26592846371960627,
+      "z": 0.058475,
+      "z_fuente": "NED, galaxia anfitriona WISEA J222838.22+001558.0",
+      "ebv": 0.0566,
+      "t_max": 61204.53916615019,
+      "mag_max": 17.956787463275454,
+      "dm15_g": 1.1236092243655023,
+      "error_dm15": 0.07149441808567614,
+      "color_max": -0.10267656493760668,
+      "n_g": 37,
+      "n_r": 24,
+      "n_antes": 10,
+      "hueco_max": 2.0376852001063526,
+      "candid_estampilla": "3451454536115015012",
+      "distancia_mpc": 237.37794716600933,
+      "distancia_hubble_mpc": 257.75582854943667,
+      "diferencia_porcentual": -7.905885774962768,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.39,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25aboeejj es una supernova de tipo Ia que alcanzó su punto más brillante en junio de 2026 en la galaxia WISEA J222838.22+001558.0. Su luz viajó unos 841 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 18,0, unas 60.634 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25aboeejj is a Type Ia supernova that reached its brightest point in June 2026 in the galaxy WISEA J222838.22+001558.0. Its light travelled about 841 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 18.0, about 60,634 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abpkect",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "2MASX J21514573-0654266",
+      "ra": 327.939382345872,
+      "dec": -6.907694641284718,
+      "z": 0.057723,
+      "z_fuente": "NED, galaxia anfitriona 2MASX J21514573-0654266",
+      "ebv": 0.0273,
+      "t_max": 60934.830845110075,
+      "mag_max": 17.990605949163676,
+      "dm15_g": 1.26930821101584,
+      "error_dm15": 0.11956146671893257,
+      "color_max": -0.17996209555361276,
+      "n_g": 22,
+      "n_r": 28,
+      "n_antes": 10,
+      "hueco_max": 4.118020799942315,
+      "candid_estampilla": "3180333716015015017",
+      "distancia_mpc": 244.49890498491928,
+      "distancia_hubble_mpc": 254.34808576067894,
+      "diferencia_porcentual": -3.8723235310789597,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.592,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25abpkect es una supernova de tipo Ia que alcanzó su punto más brillante en septiembre de 2025 en la galaxia 2MASX J21514573-0654266. Su luz viajó unos 830 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 18,0, unas 62.552 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25abpkect is a Type Ia supernova that reached its brightest point in September 2025 in the galaxy 2MASX J21514573-0654266. Its light travelled about 830 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 18.0, about 62,552 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF26aahjslj",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "VPC 0145",
+      "ra": 185.38044848294888,
+      "dec": 12.519866223662016,
+      "z": 0.057796,
+      "z_fuente": "NED, galaxia anfitriona VPC 0145",
+      "ebv": 0.0342,
+      "t_max": 61107.09159788017,
+      "mag_max": 18.031720632017194,
+      "dm15_g": 1.1245318387912313,
+      "error_dm15": 0.06144607361474642,
+      "color_max": -0.11428261746631563,
+      "n_g": 27,
+      "n_r": 29,
+      "n_antes": 9,
+      "hueco_max": 4.152233799919486,
+      "candid_estampilla": "3353430094215015000",
+      "distancia_mpc": 256.0911690622404,
+      "distancia_hubble_mpc": 254.6787844377487,
+      "diferencia_porcentual": 0.5545749040736935,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.738048,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF26aahjslj es una supernova de tipo Ia que alcanzó su punto más brillante en marzo de 2026 en la galaxia VPC 0145. Su luz viajó unos 831 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 18,0, unas 64.966 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF26aahjslj is a Type Ia supernova that reached its brightest point in March 2026 in the galaxy VPC 0145. Its light travelled about 831 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 18.0, about 64,966 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abaefwo",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025qqj",
+      "host": null,
+      "ra": 332.1343815937688,
+      "dec": -16.148335531120242,
+      "z": 0.063,
+      "z_fuente": "NED, SN 2025qqj",
+      "ebv": 0.0296,
+      "t_max": 60878.43887819995,
+      "mag_max": 18.04662195828535,
+      "dm15_g": 1.021823352240876,
+      "error_dm15": 0.1542546651717067,
+      "color_max": 0.015555947039544549,
+      "n_g": 30,
+      "n_r": 62,
+      "n_antes": 10,
+      "hueco_max": 3.9594560000114143,
+      "candid_estampilla": "3125419314215015001",
+      "distancia_mpc": 268.996276850741,
+      "distancia_hubble_mpc": 278.31232838430003,
+      "diferencia_porcentual": -3.3473369964032593,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.57884,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025qqj es una supernova de tipo Ia que alcanzó su punto más brillante en julio de 2025. Su luz viajó unos 908 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 18,0, unas 65.864 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025qqj is a Type Ia supernova that reached its brightest point in July 2025. Its light travelled about 908 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 18.0, about 65,864 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aazufyf",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025qmg",
+      "host": null,
+      "ra": 317.0100870300796,
+      "dec": -15.596411677774876,
+      "z": 0.07,
+      "z_fuente": "NED, SN 2025qmg",
+      "ebv": 0.0545,
+      "t_max": 60875.03207079981,
+      "mag_max": 18.101380143370132,
+      "dm15_g": 0.9222885583010232,
+      "error_dm15": 0.06598095838798655,
+      "color_max": -0.1053129191219142,
+      "n_g": 39,
+      "n_r": 61,
+      "n_antes": 12,
+      "hueco_max": 2.9483680999837816,
+      "candid_estampilla": "3119384274415015001",
+      "distancia_mpc": 267.95726356610504,
+      "distancia_hubble_mpc": 310.28519403,
+      "diferencia_porcentual": -13.641621088695095,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.663336,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025qmg es una supernova de tipo Ia que alcanzó su punto más brillante en julio de 2025. Su luz viajó unos 1.012 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría una época sin nombre fácil: la vida apenas empezaba y sólo había microbios en el agua. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 18,1, unas 69.271 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025qmg is a Type Ia supernova that reached its brightest point in July 2025. Its light travelled about 1,012 million years before reaching the ZTF telescopes. When this star exploded, Earth was in a time with no easy name: life was only just beginning and there were only microbes in the water. The first human being was still a very long way off. At maximum it reached magnitude 18.1, about 69,271 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abczmes",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J234740.10-060531.9",
+      "ra": 356.9172041847686,
+      "dec": -6.092271792573699,
+      "z": 0.062937,
+      "z_fuente": "NED, galaxia anfitriona WISEA J234740.10-060531.9",
+      "ebv": 0.0243,
+      "t_max": 60890.28272405003,
+      "mag_max": 18.170494518882432,
+      "dm15_g": 0.8633890695341258,
+      "error_dm15": 0.05234431153284291,
+      "color_max": -0.2022869852597431,
+      "n_g": 40,
+      "n_r": 24,
+      "n_antes": 18,
+      "hueco_max": 4.929606500081718,
+      "candid_estampilla": "3135394160215015023",
+      "distancia_mpc": 295.53106418141937,
+      "distancia_hubble_mpc": 278.0255254388476,
+      "diferencia_porcentual": 6.2963782605716805,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.527908,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "ZTF25abczmes es una supernova de tipo Ia que alcanzó su punto más brillante en agosto de 2025 en la galaxia WISEA J234740.10-060531.9. Su luz viajó unos 907 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 18,2, unas 73.824 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25abczmes is a Type Ia supernova that reached its brightest point in August 2025 in the galaxy WISEA J234740.10-060531.9. Its light travelled about 907 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 18.2, about 73,824 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF18aasrlze",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025pdd",
+      "host": null,
+      "ra": 274.0214963236582,
+      "dec": 43.20330959026314,
+      "z": 0.062,
+      "z_fuente": "NED, SN 2025pdd",
+      "ebv": 0.0261,
+      "t_max": 60867.11066560004,
+      "mag_max": 18.188053508147643,
+      "dm15_g": 1.1778503113489442,
+      "error_dm15": 0.08204940238064753,
+      "color_max": -0.020358719097977485,
+      "n_g": 47,
+      "n_r": 47,
+      "n_antes": 19,
+      "hueco_max": 2.0463656997308135,
+      "candid_estampilla": "3113344306215015002",
+      "distancia_mpc": 277.2586627721956,
+      "distancia_hubble_mpc": 273.76190714679996,
+      "diferencia_porcentual": 1.2772980952096264,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.60858,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025pdd es una supernova de tipo Ia que alcanzó su punto más brillante en julio de 2025. Su luz viajó unos 893 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 18,2, unas 75.028 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025pdd is a Type Ia supernova that reached its brightest point in July 2025. Its light travelled about 893 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 18.2, about 75,028 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aawnphj",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025onz",
+      "host": null,
+      "ra": 268.38378381643145,
+      "dec": 34.4846306953461,
+      "z": 0.06,
+      "z_fuente": "NED, SN 2025onz",
+      "ebv": 0.0344,
+      "t_max": 60858.219898599906,
+      "mag_max": 18.272319594177283,
+      "dm15_g": 1.4244964876237312,
+      "error_dm15": 0.12781953626152903,
+      "color_max": null,
+      "n_g": 15,
+      "n_r": 4,
+      "n_antes": 6,
+      "hueco_max": 4.977662000339478,
+      "candid_estampilla": "3103308293615015021",
+      "distancia_mpc": 266.9561025280964,
+      "distancia_hubble_mpc": 264.67391291999996,
+      "diferencia_porcentual": 0.862264657260056,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.648856,
+        "ranking": 1
+      },
+      "dificultad": "intermedia",
+      "textos": {
+        "es": {
+          "historia": "SN 2025onz es una supernova de tipo Ia que alcanzó su punto más brillante en julio de 2025. Su luz viajó unos 863 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 18,3, unas 81.083 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025onz is a Type Ia supernova that reached its brightest point in July 2025. Its light travelled about 863 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 18.3, about 81,083 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25ackrgcs",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J095250.68+393657.6",
+      "ra": 148.21056013897777,
+      "dec": 39.61560960453834,
+      "z": 0.045792,
+      "z_fuente": "NED, galaxia anfitriona WISEA J095250.68+393657.6",
+      "ebv": 0.0126,
+      "t_max": 61049.82601600019,
+      "mag_max": 17.08748923834305,
+      "dm15_g": 1.0345728038262223,
+      "error_dm15": 0.07039441102977967,
+      "color_max": null,
+      "n_g": 14,
+      "n_r": 11,
+      "n_antes": 2,
+      "hueco_max": 4.915439799893647,
+      "candid_estampilla": "3296348912415015003",
+      "distancia_mpc": 177.8533054743027,
+      "distancia_hubble_mpc": 200.6059246881758,
+      "diferencia_porcentual": -11.341947776088894,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.784,
+        "ranking": 1
+      },
+      "dificultad": "desafio",
+      "textos": {
+        "es": {
+          "historia": "ZTF25ackrgcs es una supernova de tipo Ia que alcanzó su punto más brillante en enero de 2026 en la galaxia WISEA J095250.68+393657.6. Su luz viajó unos 654 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Criogénico: la Tierra era casi una bola de nieve, congelada casi de polo a polo, y la única vida eran microbios y algas: no existía ni un solo animal. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,1, unas 27.227 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25ackrgcs is a Type Ia supernova that reached its brightest point in January 2026 in the galaxy WISEA J095250.68+393657.6. Its light travelled about 654 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Cryogenian: Earth was almost a snowball, frozen nearly from pole to pole, and the only life was microbes and algae: not a single animal existed. The first human being was still a very long way off. At maximum it reached magnitude 17.1, about 27,227 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abjkphq",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J024514.57+082738.8",
+      "ra": 41.31406963825352,
+      "dec": 8.461935804736317,
+      "z": 0.038256,
+      "z_fuente": "NED, galaxia anfitriona WISEA J024514.57+082738.8",
+      "ebv": 0.1424,
+      "t_max": 60910.202144759816,
+      "mag_max": 17.18369366024731,
+      "dm15_g": 1.0139247742721302,
+      "error_dm15": 0.06584640843455174,
+      "color_max": 0.04626019761086653,
+      "n_g": 13,
+      "n_r": 12,
+      "n_antes": 2,
+      "hueco_max": 4.940833300352097,
+      "candid_estampilla": "3155422181515015011",
+      "distancia_mpc": 146.66339282916158,
+      "distancia_hubble_mpc": 166.97480903649554,
+      "diferencia_porcentual": -12.164359596838656,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.624748,
+        "ranking": 1
+      },
+      "dificultad": "desafio",
+      "textos": {
+        "es": {
+          "historia": "ZTF25abjkphq es una supernova de tipo Ia que alcanzó su punto más brillante en agosto de 2025 en la galaxia WISEA J024514.57+082738.8. Su luz viajó unos 545 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Ediacárico: los primeros animales eran cuerpos blandos y planos pegados al fondo del mar, sin huesos ni conchas. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,2, unas 29.749 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25abjkphq is a Type Ia supernova that reached its brightest point in August 2025 in the galaxy WISEA J024514.57+082738.8. Its light travelled about 545 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Ediacaran: the first animals were soft, flat bodies stuck to the sea floor, with no bones and no shells. The first human being was still a very long way off. At maximum it reached magnitude 17.2, about 29,749 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25aavpehi",
+      "survey": "ZTF",
+      "nombre_sn": "SN 2025nzq",
+      "host": null,
+      "ra": 253.9243263210116,
+      "dec": 53.374509805330504,
+      "z": 0.05,
+      "z_fuente": "NED, SN 2025nzq",
+      "ebv": 0.0671,
+      "t_max": 60856.60561810011,
+      "mag_max": 17.899480872348242,
+      "dm15_g": 1.0385134368332594,
+      "error_dm15": 0.15717074245182583,
+      "color_max": 0.10139646354684118,
+      "n_g": 12,
+      "n_r": 14,
+      "n_antes": 5,
+      "hueco_max": 4.084363500121981,
+      "candid_estampilla": "3104369613115015021",
+      "distancia_mpc": 234.39793506164412,
+      "distancia_hubble_mpc": 219.49090675,
+      "diferencia_porcentual": 6.79163821972052,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.555768,
+        "ranking": 1
+      },
+      "dificultad": "desafio",
+      "textos": {
+        "es": {
+          "historia": "SN 2025nzq es una supernova de tipo Ia que alcanzó su punto más brillante en junio de 2025. Su luz viajó unos 716 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Criogénico: la Tierra era casi una bola de nieve, congelada casi de polo a polo, y la única vida eran microbios y algas: no existía ni un solo animal. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 17,9, unas 57.516 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "SN 2025nzq is a Type Ia supernova that reached its brightest point in June 2025. Its light travelled about 716 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Cryogenian: Earth was almost a snowball, frozen nearly from pole to pole, and the only life was microbes and algae: not a single animal existed. The first human being was still a very long way off. At maximum it reached magnitude 17.9, about 57,516 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    },
+    {
+      "oid": "ZTF25abuvlkk",
+      "survey": "ZTF",
+      "nombre_sn": null,
+      "host": "WISEA J010719.04+361705.4",
+      "ra": 16.82959659098523,
+      "dec": 36.284356361946145,
+      "z": 0.063916,
+      "z_fuente": "NED, galaxia anfitriona WISEA J010719.04+361705.4",
+      "ebv": 0.0432,
+      "t_max": 60960.817616499895,
+      "mag_max": 18.217734162566163,
+      "dm15_g": 1.353415582582091,
+      "error_dm15": 0.13944596909544538,
+      "color_max": -0.13014481730308347,
+      "n_g": 14,
+      "n_r": 14,
+      "n_antes": 5,
+      "hueco_max": 4.119155100081116,
+      "candid_estampilla": "3207243185315015014",
+      "distancia_mpc": 258.66419747093875,
+      "distancia_hubble_mpc": 282.48427247036545,
+      "diferencia_porcentual": -8.432354407244246,
+      "clasificacion": {
+        "clasificador": "lc_classifier_BHRF_forced_phot",
+        "version": "2.1.0",
+        "clase": "SNIa",
+        "probabilidad": 0.712,
+        "ranking": 1
+      },
+      "dificultad": "desafio",
+      "textos": {
+        "es": {
+          "historia": "ZTF25abuvlkk es una supernova de tipo Ia que alcanzó su punto más brillante en octubre de 2025 en la galaxia WISEA J010719.04+361705.4. Su luz viajó unos 921 millones de años antes de llegar a los telescopios de ZTF. Cuando esta estrella explotó, en la Tierra corría el Tónico: no había plantas ni animales de ningún tipo: sólo microbios y algas verdes flotando en el mar. Faltaba muchísimo para que apareciera el primer ser humano. En el máximo llegó a magnitud 18,2, unas 77.107 veces más débil que la estrella más tenue que puedes ver a simple vista."
+        },
+        "en": {
+          "historia": "ZTF25abuvlkk is a Type Ia supernova that reached its brightest point in October 2025 in the galaxy WISEA J010719.04+361705.4. Its light travelled about 921 million years before reaching the ZTF telescopes. When this star exploded, Earth was in the Tonian: there were no plants and no animals of any kind: just microbes and green algae floating in the sea. The first human being was still a very long way off. At maximum it reached magnitude 18.2, about 77,107 times fainter than the faintest star you can see with the naked eye."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ idioma }}">
+<head>
+<meta charset="utf-8">
+<title>{{ titulo }}</title>
+<style>
+  @page { size: A4; margin: 15mm; }
+  body { font-family: "Segoe UI", system-ui, sans-serif; color: #000; line-height: 1.5;
+         max-width: 180mm; margin: 0 auto; font-size: 11pt; }
+  h1 { font-size: 16pt; margin: 0 0 2mm; }
+  h2 { font-size: 12.5pt; margin: 6mm 0 2mm; border-bottom: 1.5pt solid #000; padding-bottom: 1mm; }
+  .sub { color: #444; margin: 0 0 4mm; }
+  .caja { border: 1.2pt solid #000; border-radius: 2mm; padding: 3mm 4mm; margin: 3mm 0; }
+  .lineas { border-bottom: 1pt dotted #666; height: 7mm; }
+  table { border-collapse: collapse; width: 100%; font-size: 9.5pt; }
+  th, td { border: 0.6pt solid #999; padding: 1mm 2mm; text-align: right; }
+  th { background: #eee; text-align: left; }
+  td:nth-child(2) { text-align: left; }
+  .dos { column-count: 2; column-gap: 8mm; }
+  .pauta { background: #f2f2f2; }
+  .formula { font-family: ui-monospace, Consolas, monospace; background: #f0f0f0;
+             padding: 2mm 3mm; border-radius: 1.5mm; }
+  ol > li { margin-bottom: 3mm; }
+  .nota { font-size: 9pt; color: #444; }
+  .salto { break-before: page; }
+  svg { width: 100%; height: auto; border: 1pt solid #000; }
+  .papel-linea { stroke: #bbb; stroke-width: 0.4; }
+  .papel-linea--fuerte { stroke: #666; stroke-width: 0.9; }
+  .papel-texto { font-size: 7px; fill: #333; }
+  @media screen { body { padding: 10mm; } .imprimir { margin-bottom: 6mm; } }
+  @media print { .imprimir { display: none; } }
+</style>
+</head>
+<body>
+<p class="imprimir"><button type="button" onclick="window.print()">{{ txt.imprimir }}</button></p>
+
+<h1>{{ titulo }}</h1>
+<p class="sub">{{ nombre }} · {{ txt.datos_de }} ALeRCE / ZTF{% if pauta %} · <strong>{{ txt.pauta }}</strong>{% endif %}</p>
+
+{% if not papel %}
+<div class="caja">
+  <p style="margin:0">{{ historia }}</p>
+</div>
+
+<h2>{{ txt.pasos }}</h2>
+<ol>
+  <li>{{ txt.paso1 }}</li>
+  <li>{{ txt.paso2 }}
+    <p class="lineas"></p></li>
+  <li>{{ txt.paso3 }}
+    <p class="lineas"></p></li>
+  <li>{{ txt.paso4 }}
+    <p class="formula">M = −19,3 &nbsp;&nbsp;&nbsp; μ = m − M &nbsp;&nbsp;&nbsp; d = 10^((μ+5)/5) pc</p>
+    <p class="lineas"></p>
+    <p class="lineas"></p></li>
+  <li>{{ txt.paso5 }}<p class="lineas"></p></li>
+</ol>
+
+{% if pauta %}
+<h2 class="pauta">{{ txt.pauta }}</h2>
+<div class="caja pauta">
+  <table>
+    <tbody>
+    {% for etiqueta, valor in pauta_filas %}
+      <tr><th>{{ etiqueta }}</th><td colspan="3">{{ valor }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <p class="nota">{{ txt.nota_pauta }}</p>
+</div>
+{% endif %}
+
+<h2 class="salto">{{ txt.datos }}</h2>
+<p class="nota">{{ txt.nota_datos }}</p>
+<div class="dos">
+<table>
+  <thead><tr><th>{{ txt.dia }}</th><th>{{ txt.banda }}</th><th>{{ txt.mag }}</th><th>±</th></tr></thead>
+  <tbody>
+  {% for f in filas %}
+    <tr><td>{{ f[0] }}</td><td>{{ f[1] }}</td><td>{{ f[2] }}</td><td>{{ f[3] }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
+{% if papel or not pauta %}
+{% if not papel %}<h2 class="salto">{{ txt.papel }}</h2>{% endif %}
+<p class="nota">{{ txt.nota_papel }}</p>
+{{ svg | safe }}
+{% endif %}
+
+</body>
+</html>

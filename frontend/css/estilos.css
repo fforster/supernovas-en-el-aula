@@ -1,0 +1,345 @@
+/* Supernovas en el aula — hoja de estilos
+   Objetivo: legible para 10-15 años, WCAG 2.1 AA, y que funcione impreso.
+
+   Colores de banda: azul y bermellón, elegidos de la paleta de Okabe & Ito,
+   que se distinguen en todos los tipos de daltonismo. Además cada banda usa una
+   FORMA distinta (círculo / triángulo), porque el color nunca debe ser el único
+   canal de información. */
+
+:root {
+  --tinta: #14202e;
+  --tinta-suave: #4a5a6c;
+  --fondo: #fbfcfd;
+  --papel: #ffffff;
+  --borde: #c3ced9;
+
+  --banda-g: #0f6fa8;   /* azul   */
+  --banda-r: #c1440e;   /* bermellón */
+  --acento: #7326a8;
+  --exito: #1b6b3a;
+  --atencion: #8a5a00;
+  --error: #a41d1d;
+
+  --radio: 10px;
+  --foco: 3px solid #7326a8;
+  --sombra: 0 1px 3px rgba(20, 32, 46, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tinta: #eef3f8;
+    --tinta-suave: #b3c1d0;
+    --fondo: #121a24;
+    --papel: #1b2532;
+    --borde: #3c4a5a;
+    --banda-g: #6fc0f0;
+    --banda-r: #ff9166;
+    --acento: #cfa8f0;
+    --exito: #7fd6a2;
+    --atencion: #f0c674;
+    --error: #ff9a9a;
+    --foco: 3px solid #cfa8f0;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 106.25%; }           /* base ~17px: más cómodo para leer */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  line-height: 1.65;
+  color: var(--tinta);
+  background: var(--fondo);
+}
+
+/* Nadie debería perder el foco de vista. */
+:focus-visible { outline: var(--foco); outline-offset: 2px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.saltar {
+  position: absolute; left: -9999px;
+  background: var(--acento); color: #fff;
+  padding: 0.75rem 1.25rem; border-radius: 0 0 var(--radio) 0; z-index: 100;
+}
+.saltar:focus { left: 0; top: 0; }
+
+/* ------------------------------------------------------------- cabecera */
+
+.cabecera {
+  display: flex; flex-wrap: wrap; gap: 1rem 2rem;
+  align-items: flex-end; justify-content: space-between;
+  padding: 1.25rem clamp(1rem, 4vw, 2.5rem);
+  background: var(--papel);
+  border-bottom: 3px solid var(--borde);
+}
+.cabecera h1 { margin: 0; font-size: clamp(1.4rem, 3.5vw, 2rem); line-height: 1.2; }
+.subtitulo { margin: 0.25rem 0 0; color: var(--tinta-suave); }
+.cabecera__controles { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; }
+
+/* Conmutador docente/estudiante: botones grandes, estado muy visible. */
+.conmutador { border: 0; padding: 0; margin: 0; }
+.conmutador legend {
+  padding: 0; font-size: 0.85rem; font-weight: 600; color: var(--tinta-suave);
+}
+.conmutador__grupo { display: flex; border: 2px solid var(--borde); border-radius: var(--radio); overflow: hidden; }
+.conmutador input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.conmutador label {
+  padding: 0.5rem 1.1rem; cursor: pointer; background: var(--papel);
+  font-weight: 600; user-select: none;
+}
+.conmutador input:checked + label { background: var(--acento); color: #fff; }
+.conmutador input:focus-visible + label { outline: var(--foco); outline-offset: -3px; }
+
+.campo { display: flex; flex-direction: column; gap: 0.2rem; margin: 0 0 1rem; }
+.campo label { font-size: 0.85rem; font-weight: 600; color: var(--tinta-suave); }
+select {
+  font: inherit; padding: 0.45rem 0.6rem; min-height: 2.75rem;
+  border: 2px solid var(--borde); border-radius: var(--radio);
+  background: var(--papel); color: var(--tinta);
+}
+
+/* ---------------------------------------------------------------- main */
+
+main {
+  max-width: 62rem; margin: 0 auto;
+  padding: 1.5rem clamp(1rem, 4vw, 2.5rem) 4rem;
+}
+main:focus { outline: none; }
+
+h2 { font-size: clamp(1.25rem, 3vw, 1.6rem); margin-top: 2rem; }
+h3 { font-size: 1.2rem; margin-top: 2rem; }
+h4 { font-size: 1.02rem; margin: 0 0 0.25rem; }
+
+.ayuda { color: var(--tinta-suave); max-width: 60ch; }
+.tenue { color: var(--tinta-suave); font-size: 0.9rem; }
+
+/* ------------------------------------------------------------ tarjetas */
+
+/* Dos columnas, no tres: cada tarjeta lleva el triplete de imágenes y con tres
+   columnas las estampillas quedaban demasiado chicas para ver la supernova. */
+.tarjetas {
+  list-style: none; padding: 0; margin: 1.5rem 0 0;
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+}
+@media (max-width: 34rem) {
+  .tarjetas { grid-template-columns: 1fr; }
+}
+.tarjeta {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  background: var(--papel); border: 2px solid var(--borde);
+  border-radius: var(--radio); padding: 1rem; box-shadow: var(--sombra);
+}
+.tarjeta h3 { margin: 0; font-size: 1.1rem; }
+.tarjeta p { margin: 0; font-size: 0.92rem; }
+.tarjeta .boton { margin-top: auto; }
+/* Sin filtros CSS: el contraste se ajusta en el servidor con
+   astropy.visualization (ver backend/imagenes.py), midiendo el brillo de la
+   zona central para que la supernova quede siempre visible. Un
+   filter: brightness() subía también el ruido y no podía comprimir el rango. */
+
+.insignia {
+  display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px;
+  font-size: 0.8rem; font-weight: 700; border: 2px solid;
+}
+.insignia--facil       { color: var(--exito);    border-color: var(--exito); }
+.insignia--intermedia  { color: var(--atencion); border-color: var(--atencion); }
+.insignia--desafio     { color: var(--error);    border-color: var(--error); }
+
+/* ------------------------------------------------------------- botones */
+
+.boton {
+  display: inline-block; font: inherit; font-weight: 600; text-align: center;
+  padding: 0.65rem 1.15rem; min-height: 2.75rem;   /* objetivo táctil cómodo */
+  border: 2px solid var(--acento); border-radius: var(--radio);
+  background: var(--acento); color: #fff; cursor: pointer; text-decoration: none;
+}
+.boton:hover { filter: brightness(1.12); }
+.boton--secundario { background: var(--papel); color: var(--acento); }
+.boton--texto {
+  background: none; border: 0; color: var(--acento);
+  padding: 0.5rem 0; text-decoration: underline;
+}
+.acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1rem 0; }
+
+/* -------------------------------------------------------------- objeto */
+
+.objeto__intro { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: flex-start; }
+.objeto__intro > div { flex: 1 1 22rem; }
+.historia { font-size: 1.05rem; max-width: 62ch; }
+
+/* Triplete ciencia / referencia / diferencia. */
+.triplete {
+  list-style: none; padding: 0; margin: 1rem 0;
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+.triplete li { margin: 0; }
+.triplete .estampilla {
+  width: 100%; aspect-ratio: 1; object-fit: contain;
+  background: #000; border-radius: var(--radio); image-rendering: pixelated;
+}
+.triplete__pie { margin: 0.4rem 0 0.2rem; font-weight: 700; font-size: 0.95rem; }
+.triplete .ayuda { font-size: 0.88rem; margin: 0; }
+
+/* En las tarjetas del catálogo van chicas y sin explicación: ahí sólo hacen
+   de anzuelo visual, la explicación está en la ficha del objeto. */
+.triplete--compacto {
+  grid-template-columns: repeat(3, 1fr); gap: 0.4rem; margin: 0 0 0.5rem;
+}
+.triplete--compacto .estampilla { border-radius: 5px; }
+.triplete--compacto .triplete__pie {
+  font-size: 0.72rem; font-weight: 600; color: var(--tinta-suave);
+  margin: 0.2rem 0 0; text-align: center; line-height: 1.25;
+}
+
+.clasificacion, .metodo, .tabla-datos {
+  border: 2px solid var(--borde); border-radius: var(--radio);
+  background: var(--papel); padding: 0.5rem 1rem; margin: 1rem 0;
+}
+summary { cursor: pointer; font-weight: 600; padding: 0.35rem 0; }
+
+/* ------------------------------------------------------------- gráfico */
+
+.grafico {
+  background: var(--papel); border: 2px solid var(--borde);
+  border-radius: var(--radio); padding: 0.5rem; overflow-x: auto;
+}
+.grafico svg { display: block; width: 100%; height: auto; min-width: 20rem; }
+
+.eje { stroke: var(--tinta-suave); stroke-width: 1.5; }
+.rejilla { stroke: var(--borde); stroke-width: 1; stroke-dasharray: 3 4; }
+.eje-texto { fill: var(--tinta-suave); font-size: 12px; }
+.eje-titulo { fill: var(--tinta); font-size: 13px; font-weight: 600; }
+.barra-error { stroke-width: 1.5; }
+.punto--g { fill: var(--banda-g); stroke: var(--banda-g); }
+.punto--r { fill: var(--banda-r); stroke: var(--banda-r); }
+
+.leyenda { list-style: none; display: flex; gap: 1.5rem; padding: 0.5rem 0; margin: 0; flex-wrap: wrap; }
+.leyenda li { display: flex; align-items: center; gap: 0.45rem; }
+.marca { width: 1rem; height: 1rem; display: inline-block; }
+.marca--g { background: var(--banda-g); border-radius: 50%; }
+.marca--r { background: var(--banda-r); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+
+/* ------------------------------------------------------------- cuaderno */
+
+#cuaderno {
+  background: var(--papel); border: 2px solid var(--acento);
+  border-radius: var(--radio); padding: 1rem 1.25rem; margin-bottom: 2rem;
+}
+#cuaderno h2 { margin-top: 0; }
+#cuaderno .tabla-envoltorio { max-height: none; }
+#cuaderno td:first-child { text-align: left; font-weight: 600; }
+#cuaderno .boton--texto { padding: 0 0.5rem; font-size: 1.2rem; line-height: 1.4; }
+#cuaderno-progreso { font-weight: 600; }
+
+.boton:disabled { opacity: 0.5; cursor: not-allowed; filter: none; }
+
+/* Papel para el gráfico final: cuadrado, con los dos ejes a la misma escala. */
+#cierre-papel svg { display: block; width: 100%; max-width: 34rem; height: auto; margin: 0 auto; }
+.papel-linea { stroke: var(--borde); stroke-width: 0.5; }
+.papel-linea--fuerte { stroke: var(--tinta-suave); stroke-width: 1.1; }
+.papel-texto { fill: var(--tinta-suave); font-size: 9px; }
+
+/* Sólo para lectores de pantalla. */
+.visualmente-oculto {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* --------------------------------------------------------------- tablas */
+
+.tabla-envoltorio { overflow-x: auto; max-height: 24rem; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+caption { text-align: left; font-weight: 600; padding: 0.5rem 0; }
+th, td { padding: 0.35rem 0.7rem; border-bottom: 1px solid var(--borde); text-align: right; }
+th { text-align: left; position: sticky; top: 0; background: var(--papel); }
+td:nth-child(2) { text-align: left; }
+
+/* ---------------------------------------------------------------- pasos */
+
+.pasos { padding-left: 1.2rem; }
+.pasos > li { margin-bottom: 1.75rem; }
+
+/* Formulario donde el estudiante anota lo que midió en SU gráfico. */
+.medidor {
+  display: flex; flex-wrap: wrap; gap: 0 2rem;
+  background: var(--papel); border: 2px solid var(--borde);
+  border-radius: var(--radio); padding: 1rem 1.25rem; margin: 1rem 0;
+}
+.medidor .campo { flex: 1 1 15rem; margin-bottom: 0.75rem; }
+.medidor .acciones { flex: 1 1 100%; margin-bottom: 0; }
+.medidor .ayuda { font-size: 0.85rem; margin: 0 0 0.3rem; }
+
+#form-medicion input {
+  font: inherit; font-variant-numeric: tabular-nums;
+  padding: 0.5rem 0.7rem; min-height: 2.75rem; width: 100%; max-width: 12rem;
+  border: 2px solid var(--borde); border-radius: var(--radio);
+  background: var(--papel); color: var(--tinta);
+}
+#form-medicion input[aria-invalid="true"] { border-color: var(--error); border-width: 3px; }
+
+/* El mensaje de error lleva texto además del color: rojo solo no basta. */
+.error:not(:empty) {
+  display: block; margin-top: 0.3rem; color: var(--error); font-weight: 600;
+  font-size: 0.9rem;
+}
+.error:not(:empty)::before { content: "⚠ "; }
+
+/* ------------------------------------------------------------ resultado */
+
+.resultado {
+  background: var(--papel); border: 3px solid var(--exito);
+  border-radius: var(--radio); padding: 1rem 1.25rem; margin-top: 1.5rem;
+}
+.datos { display: grid; grid-template-columns: 1fr auto; gap: 0.35rem 1.5rem; margin: 0; }
+.datos--dos { grid-template-columns: 1fr auto; }
+.datos dt { color: var(--tinta-suave); }
+.datos dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+.veredicto { font-size: 1.1rem; font-weight: 700; margin: 1rem 0 0; }
+
+/* --------------------------------------------------------------- avisos */
+
+.aviso { border-radius: var(--radio); padding: 0.85rem 1.15rem; border: 2px solid; }
+.aviso--offline   { border-color: var(--atencion); color: var(--atencion); margin: 0 clamp(1rem,4vw,2.5rem); }
+.aviso--atencion  { border-color: var(--atencion); background: var(--papel); }
+.aviso--atencion ul { margin: 0.25rem 0 0; padding-left: 1.2rem; }
+.aviso--error     { border-color: var(--error); color: var(--error); background: var(--papel); }
+
+.formula {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  background: var(--fondo); padding: 0.75rem 1rem; border-radius: var(--radio);
+  overflow-x: auto;
+}
+.figura-calibracion { max-width: 100%; height: auto; border-radius: var(--radio); }
+
+.pie {
+  border-top: 2px solid var(--borde); padding: 1.5rem clamp(1rem, 4vw, 2.5rem);
+  color: var(--tinta-suave); font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------ impresión */
+
+@media print {
+  .cabecera__controles, .acciones, .saltar, .pie, #volver,
+  #aviso-offline, .tabla-datos summary { display: none !important; }
+  /* Imprimir el cierre = la tabla del estudiante y su papel, nada más. */
+  body:has(#cierre:not([hidden])) #vista-catalogo,
+  body:has(#cierre:not([hidden])) #vista-objeto { display: none !important; }
+  #cuaderno, #cierre { break-inside: avoid; border-color: #000; }
+  #cierre-papel svg { max-width: 15cm; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  main { max-width: none; padding: 0; }
+  .tabla-datos[open] .tabla-envoltorio { max-height: none; overflow: visible; }
+  .grafico, .resultado, .clasificacion { break-inside: avoid; border-color: #000; }
+  a[href]::after { content: ""; }        /* sin URLs impresas: distraen */
+}

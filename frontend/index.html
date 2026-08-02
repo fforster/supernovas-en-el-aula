@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supernovas en el aula — ALeRCE</title>
+  <meta name="description" content="Actividad escolar para medir la distancia a supernovas de tipo Ia con datos reales del broker ALeRCE y el survey ZTF.">
+  <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#principal" data-i18n="app.saltar">Saltar al contenido principal</a>
+
+  <header class="cabecera">
+    <div class="cabecera__titulo">
+      <h1 data-i18n="app.titulo">Supernovas en el aula</h1>
+      <p class="subtitulo" data-i18n="app.subtitulo"></p>
+    </div>
+
+    <div class="cabecera__controles">
+      <fieldset class="conmutador">
+        <legend data-i18n="modo.etiqueta">Vista</legend>
+        <div class="conmutador__grupo" role="radiogroup" data-i18n-aria-label="modo.cambiar">
+          <input type="radio" id="modo-estudiante" name="modo" value="estudiante" checked>
+          <label for="modo-estudiante" data-i18n="modo.estudiante">Estudiante</label>
+          <input type="radio" id="modo-docente" name="modo" value="docente">
+          <label for="modo-docente" data-i18n="modo.docente">Docente</label>
+        </div>
+      </fieldset>
+
+      <p class="campo campo--idioma">
+        <label for="idioma" data-i18n="idioma.cambiar">Cambiar idioma</label>
+        <select id="idioma">
+          <option value="es" selected>Español</option>
+          <option value="en">English</option>
+        </select>
+      </p>
+    </div>
+  </header>
+
+  <p id="aviso-offline" class="aviso aviso--offline" role="status" hidden
+     data-i18n="offline.aviso"></p>
+
+  <main id="principal" tabindex="-1">
+
+    <!-- =========================== Cuaderno ===========================
+         Va arriba de todo y a la vista: es lo que el estudiante va llenando a
+         medida que mide supernovas, y lo que al final se convierte en el
+         gráfico que discuten en clase. -->
+    <section id="cuaderno" aria-labelledby="cuaderno-titulo" hidden>
+      <h2 id="cuaderno-titulo" data-i18n="cuaderno.titulo">Mis resultados</h2>
+      <p class="ayuda" data-i18n="cuaderno.ayuda"></p>
+
+      <div class="tabla-envoltorio">
+        <table id="cuaderno-tabla">
+          <caption class="visualmente-oculto" data-i18n="cuaderno.titulo"></caption>
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="cuaderno.col_sn">Supernova</th>
+              <th scope="col" data-i18n="cuaderno.col_dm15">Δm15</th>
+              <th scope="col" data-i18n="cuaderno.col_estimada">Distancia que calculaste</th>
+              <th scope="col" data-i18n="cuaderno.col_real">Distancia real</th>
+              <th scope="col" data-i18n="cuaderno.col_dif">Diferencia</th>
+              <th scope="col"><span class="visualmente-oculto" data-i18n="cuaderno.col_quitar"></span></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <p id="cuaderno-progreso" class="ayuda" role="status"></p>
+
+      <div class="acciones">
+        <button type="button" id="cuaderno-csv" class="boton boton--secundario"
+                data-i18n="cuaderno.descargar"></button>
+        <button type="button" id="cuaderno-graficar" class="boton"
+                data-i18n="cuaderno.graficar"></button>
+        <button type="button" id="cuaderno-vaciar" class="boton boton--texto"
+                data-i18n="cuaderno.vaciar"></button>
+      </div>
+    </section>
+
+    <!-- ==================== Gráfico final y discusión ==================== -->
+    <section id="cierre" aria-labelledby="cierre-titulo" hidden>
+      <h2 id="cierre-titulo" data-i18n="cierre.titulo"></h2>
+      <p data-i18n="cierre.texto"></p>
+
+      <div id="cierre-papel" class="grafico"></div>
+
+      <h3 data-i18n="cierre.discutir"></h3>
+      <ol class="pasos">
+        <li data-i18n="cierre.p1"></li>
+        <li data-i18n="cierre.p2"></li>
+        <li data-i18n="cierre.p3"></li>
+        <li data-i18n="cierre.p4"></li>
+      </ol>
+
+      <div class="acciones">
+        <button type="button" id="cierre-imprimir" class="boton"
+                data-i18n="cierre.imprimir"></button>
+        <button type="button" id="cierre-volver" class="boton boton--secundario"
+                data-i18n="cierre.volver"></button>
+      </div>
+    </section>
+
+    <!-- ============================ Catálogo ============================ -->
+    <section id="vista-catalogo" aria-labelledby="catalogo-titulo">
+      <h2 id="catalogo-titulo" data-i18n="catalogo.titulo">Elige una supernova</h2>
+      <p class="ayuda" data-i18n="catalogo.ayuda"></p>
+
+      <p class="campo">
+        <label for="filtro-dificultad" data-i18n="catalogo.filtro">Mostrar</label>
+        <select id="filtro-dificultad">
+          <option value="" data-i18n="catalogo.todas">Todas</option>
+          <option value="facil" data-i18n="dificultad.facil">Fácil</option>
+          <option value="intermedia" data-i18n="dificultad.intermedia">Intermedia</option>
+          <option value="desafio" data-i18n="dificultad.desafio">Desafío</option>
+        </select>
+      </p>
+
+      <p id="catalogo-estado" role="status" data-i18n="catalogo.cargando"></p>
+      <ul id="catalogo-lista" class="tarjetas"></ul>
+    </section>
+
+    <!-- ============================= Objeto ============================= -->
+    <section id="vista-objeto" aria-labelledby="objeto-titulo" hidden>
+      <button type="button" id="volver" class="boton boton--texto"
+              data-i18n="catalogo.volver">← Volver a la lista</button>
+
+      <h2 id="objeto-titulo"></h2>
+
+      <div class="objeto__intro">
+        <div>
+          <p id="objeto-historia" class="historia"></p>
+          <details class="clasificacion">
+            <summary data-i18n="clasif.titulo">Qué dice ALeRCE</summary>
+            <p id="clasif-texto"></p>
+            <p class="tenue" id="clasif-detalle"></p>
+            <p class="tenue" data-i18n="clasif.duda"></p>
+          </details>
+        </div>
+      </div>
+
+      <!-- ---------------------- Estampillas ----------------------
+           Siempre las tres: ciencia, referencia y diferencia. La resta es la
+           que explica de un vistazo por qué la galaxia no contamina la medida. -->
+      <section id="bloque-estampillas" aria-labelledby="estampillas-titulo" hidden>
+        <h3 id="estampillas-titulo" data-i18n="estampillas.titulo"></h3>
+        <ul class="triplete" id="triplete"></ul>
+      </section>
+
+      <!-- ------------------------- Gráfico -------------------------
+           Sólo en la vista de docente. Si al estudiante se le muestra la curva
+           ya dibujada, la actividad deja de ser "grafica y mide" y pasa a ser
+           "lee el número de la pantalla". -->
+      <div id="bloque-grafico" hidden>
+        <h3 data-i18n="grafico.titulo">Curva de luz</h3>
+        <p class="ayuda" data-i18n="magnitud.explica"></p>
+
+        <div id="grafico-contenedor" class="grafico"></div>
+
+        <ul class="leyenda" aria-hidden="true">
+          <li><span class="marca marca--g"></span><span data-i18n="grafico.banda_g"></span></li>
+          <li><span class="marca marca--r"></span><span data-i18n="grafico.banda_r"></span></li>
+          <li><strong data-i18n="grafico.eje_y_nota"></strong></li>
+        </ul>
+      </div>
+
+      <h3 id="titulo-datos" data-i18n="datos.titulo">Los datos</h3>
+      <p class="ayuda" data-i18n="magnitud.explica"></p>
+
+      <details class="tabla-datos" id="tabla-datos">
+        <summary data-i18n="grafico.ver_tabla">Ver los datos como tabla</summary>
+        <div class="tabla-envoltorio">
+          <table id="tabla-curva">
+            <caption data-i18n="grafico.tabla_titulo"></caption>
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="grafico.col_dia">Día</th>
+                <th scope="col" data-i18n="grafico.col_banda">Banda</th>
+                <th scope="col" data-i18n="grafico.col_mag">Magnitud</th>
+                <th scope="col" data-i18n="grafico.col_error">Error</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- ------------------------ Descargas ------------------------ -->
+      <h3 data-i18n="descarga.titulo">Llevarse los datos</h3>
+      <div class="acciones">
+        <a id="descargar-csv" class="boton" download>
+          <span data-i18n="descarga.csv">Descargar los datos (CSV)</span>
+        </a>
+        <button type="button" id="imprimir-papel" class="boton boton--secundario"
+                data-i18n="descarga.papel">Imprimir papel milimetrado</button>
+        <button type="button" id="guardar-offline" class="boton boton--secundario"
+                data-i18n="descarga.offline">Guardar para usar sin internet</button>
+      </div>
+      <p class="ayuda" data-i18n="descarga.csv_ayuda"></p>
+
+      <!-- ==================== Vista de estudiante ==================== -->
+      <div id="panel-estudiante">
+        <h3 data-i18n="pasos.titulo">Tu misión</h3>
+
+        <ol class="pasos">
+          <li>
+            <h4 data-i18n="pasos.1.titulo"></h4>
+            <p data-i18n="pasos.1.texto"></p>
+          </li>
+          <li>
+            <h4 data-i18n="pasos.2.titulo"></h4>
+            <p data-i18n="pasos.2.texto"></p>
+          </li>
+          <li>
+            <h4 data-i18n="pasos.3.titulo"></h4>
+            <p data-i18n="pasos.3.texto"></p>
+
+            <form class="medidor" id="form-medicion" novalidate>
+              <p class="campo">
+                <label for="entrada-mag" data-i18n="medir.etiqueta_mag"></label>
+                <span class="ayuda" id="ayuda-mag" data-i18n="medir.ayuda_mag"></span>
+                <!-- type="text" y no "number": un input numérico DESCARTA la
+                     coma decimal ("15,55" llega vacío al JS), y la coma es
+                     justamente lo que escriben los estudiantes en Chile.
+                     La validación de rango la hace leerCampo() en app.js. -->
+                <input type="text" id="entrada-mag" inputmode="decimal"
+                       autocomplete="off"
+                       aria-describedby="ayuda-mag error-mag" required>
+                <span class="error" id="error-mag" role="alert"></span>
+              </p>
+
+              <p class="campo">
+                <label for="entrada-dm15" data-i18n="medir.etiqueta_dm15"></label>
+                <span class="ayuda" id="ayuda-dm15" data-i18n="medir.ayuda_dm15"></span>
+                <input type="text" id="entrada-dm15" inputmode="decimal"
+                       autocomplete="off"
+                       aria-describedby="ayuda-dm15 error-dm15" required>
+                <span class="error" id="error-dm15" role="alert"></span>
+              </p>
+
+              <div class="acciones">
+                <button type="submit" id="calcular" class="boton"
+                        data-i18n="medir.confirmar">Calcular la distancia</button>
+                <button type="button" id="reiniciar" class="boton boton--secundario"
+                        data-i18n="medir.reiniciar">Empezar de nuevo</button>
+              </div>
+            </form>
+          </li>
+          <li>
+            <h4 data-i18n="pasos.4.titulo"></h4>
+            <p data-i18n="pasos.4.texto"></p>
+          </li>
+          <li>
+            <h4 data-i18n="pasos.5.titulo"></h4>
+            <p data-i18n="pasos.5.texto"></p>
+          </li>
+          <li>
+            <h4 data-i18n="pasos.6.titulo"></h4>
+            <p data-i18n="pasos.6.texto"></p>
+          </li>
+        </ol>
+
+        <section id="resultado" class="resultado" aria-labelledby="resultado-titulo"
+                 role="region" hidden>
+          <h3 id="resultado-titulo" data-i18n="resultado.titulo">Tu resultado</h3>
+          <dl id="resultado-lista" class="datos"></dl>
+          <p id="resultado-veredicto" class="veredicto" role="status"></p>
+          <p class="ayuda" data-i18n="resultado.explica_dif"></p>
+        </section>
+      </div>
+
+      <!-- ===================== Vista de docente ===================== -->
+      <div id="panel-docente" hidden>
+        <h3 data-i18n="docente.titulo">Panel del docente</h3>
+
+        <p class="campo">
+          <label for="nivel-calculo" data-i18n="docente.nivel">Nivel de cálculo</label>
+          <select id="nivel-calculo">
+            <option value="estudiante" data-i18n="docente.nivel_estudiante"></option>
+            <option value="docente" selected data-i18n="docente.nivel_docente"></option>
+          </select>
+        </p>
+
+        <dl id="docente-datos" class="datos datos--dos"></dl>
+
+        <div id="docente-avisos" class="aviso aviso--atencion" hidden>
+          <h4 data-i18n="docente.avisos">Advertencias</h4>
+          <ul></ul>
+        </div>
+
+        <p class="tenue" id="docente-origen"></p>
+
+        <div class="acciones">
+          <button type="button" id="imprimir-informe" class="boton"
+                  data-i18n="docente.imprimir">Imprimir guía y pauta</button>
+        </div>
+
+        <details class="metodo">
+          <summary data-i18n="docente.metodo">¿Cómo se calcula?</summary>
+          <h4 data-i18n="metodo.titulo"></h4>
+          <p data-i18n="metodo.p1"></p>
+          <p data-i18n="metodo.p2"></p>
+          <p data-i18n="metodo.p3"></p>
+          <p class="formula" data-i18n="metodo.formula"></p>
+          <img src="/static/img/calibracion.png" alt="" class="figura-calibracion" loading="lazy">
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================= Error ============================= -->
+    <section id="vista-error" class="aviso aviso--error" role="alert" hidden>
+      <h2 data-i18n="error.titulo">Algo salió mal</h2>
+      <p id="error-texto"></p>
+      <button type="button" id="reintentar" class="boton"
+              data-i18n="error.reintentar">Reintentar</button>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p data-i18n="pie.creditos"></p>
+    <p class="tenue" id="pie-calibracion"></p>
+  </footer>
+
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
