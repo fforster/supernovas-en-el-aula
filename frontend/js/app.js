@@ -410,6 +410,21 @@ async function calcularDistancia(ev) {
 }
 
 
+/** Traduce un {codigo, params, texto} del backend.
+ *
+ * Los textos que se muestran en pantalla no pueden nacer como frases en Python:
+ * la interfaz puede estar en inglés. Viajan como código y se arman aquí. El
+ * `texto` que trae el JSON (en español) es sólo el respaldo por si apareciera
+ * un código sin traducir.
+ */
+function traducirRef(prefijo, ref) {
+  if (!ref) return '—';
+  if (typeof ref === 'string') return ref;          // formato antiguo
+  const clave = `${prefijo}.${ref.codigo}`;
+  const t = T.t(clave, ref.params || {});
+  return t === clave ? (ref.texto ?? clave) : t;
+}
+
 /* ---------------------------------------------------------- cuaderno */
 
 /** Repinta la tabla de resultados acumulados. */
@@ -540,15 +555,13 @@ async function cargarAnalisis() {
     // aquí. El `texto` (en español) es sólo el respaldo por si apareciera un
     // código nuevo sin traducir; antes se mostraba siempre, y la interfaz en
     // inglés terminaba con las advertencias en español.
-    const clave = `aviso.${av.codigo}`;
-    const traducido = T.t(clave, av.params || {});
-    li.textContent = traducido === clave ? av.texto : traducido;
+    li.textContent = traducirRef('aviso', av);
     ul.append(li);
   }
   avisos.hidden = !(d.avisos || []).length;
 
   $('#docente-origen').textContent = T.t('docente.origen', {
-    z_fuente: o.z_fuente || '—',
+    z_fuente: traducirRef('zfuente', o.z_fuente),
   });
   $('#pie-calibracion').textContent = T.t('pie.calibracion', {
     fecha: T.fecha(estado.analisis.calibracion.generado),

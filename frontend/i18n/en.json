@@ -200,5 +200,8 @@
   "aviso.dm15_al_borde": "Δm15 sits right at the edge of the data: treat it as approximate.",
   "aviso.pocos_puntos_maximo": "Only {n} measurements define the peak; the result may vary quite a bit.",
   "aviso.conversion_sin_color": "No colour at maximum: the g→B conversion used only the constant term, so the distance is less precise.",
-  "aviso.sin_calibrar": "The calibration has not been generated yet; default values are being used. Run scripts/calibrar_dm15.py."
+  "aviso.sin_calibrar": "The calibration has not been generated yet; default values are being used. Run scripts/calibrar_dm15.py.",
+  "zfuente.ned_sn": "NED, {nombre}",
+  "zfuente.ned_host": "NED, host galaxy {nombre}",
+  "zfuente.ned_otra_sn": "NED, another supernova in the same galaxy ({nombre})"
 }

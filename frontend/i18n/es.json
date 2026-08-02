@@ -200,5 +200,8 @@
   "aviso.dm15_al_borde": "Δm15 está apenas al borde de los datos: tómalo como aproximado.",
   "aviso.pocos_puntos_maximo": "Sólo {n} mediciones definen el máximo; el resultado puede variar bastante.",
   "aviso.conversion_sin_color": "Sin color en el máximo: la conversión g→B se hizo sólo con el término constante, así que la distancia es menos precisa.",
-  "aviso.sin_calibrar": "La calibración todavía no se ha generado; se están usando valores por defecto. Corre scripts/calibrar_dm15.py."
+  "aviso.sin_calibrar": "La calibración todavía no se ha generado; se están usando valores por defecto. Corre scripts/calibrar_dm15.py.",
+  "zfuente.ned_sn": "NED, {nombre}",
+  "zfuente.ned_host": "NED, galaxia anfitriona {nombre}",
+  "zfuente.ned_otra_sn": "NED, otra supernova de la misma galaxia ({nombre})"
 }

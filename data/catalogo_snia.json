@@ -30,7 +30,13 @@
       "ra": 316.9606550572033,
       "dec": 18.15216426382388,
       "z": 0.01633,
-      "z_fuente": "NED, SN 2025oxy",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025oxy"
+        },
+        "texto": "NED, SN 2025oxy"
+      },
       "ebv": 0.0828,
       "t_max": 60865.05155400021,
       "mag_max": 15.69331800507259,
@@ -70,7 +76,13 @@
       "ra": 215.30707049586272,
       "dec": 29.991112317207417,
       "z": 0.030214,
-      "z_fuente": "NED, SN 2025kfm",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025kfm"
+        },
+        "texto": "NED, SN 2025kfm"
+      },
       "ebv": 0.0176,
       "t_max": 60817.34833776008,
       "mag_max": 16.44216450451498,
@@ -110,7 +122,13 @@
       "ra": 332.5443326834492,
       "dec": -7.65005083377538,
       "z": 0.049,
-      "z_fuente": "NED, SN 2025ows",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025ows"
+        },
+        "texto": "NED, SN 2025ows"
+      },
       "ebv": 0.0497,
       "t_max": 60864.700920999974,
       "mag_max": 17.307837910478238,
@@ -150,7 +168,13 @@
       "ra": 12.900565094470712,
       "dec": 29.711111755124133,
       "z": 0.016455,
-      "z_fuente": "NED, galaxia anfitriona UGC 00525",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "UGC 00525"
+        },
+        "texto": "NED, galaxia anfitriona UGC 00525"
+      },
       "ebv": 0.0509,
       "t_max": 61050.69903034991,
       "mag_max": 15.266287970652195,
@@ -190,7 +214,13 @@
       "ra": 90.71657616382758,
       "dec": -23.691104158296802,
       "z": 0.038733,
-      "z_fuente": "NED, galaxia anfitriona MCG -04-15-006",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "MCG -04-15-006"
+        },
+        "texto": "NED, galaxia anfitriona MCG -04-15-006"
+      },
       "ebv": 0.03,
       "t_max": 60974.50349680012,
       "mag_max": 16.891915509411277,
@@ -230,7 +260,13 @@
       "ra": 218.5871198485909,
       "dec": 3.673457872976606,
       "z": 0.033575,
-      "z_fuente": "NED, SN 2025jus",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025jus"
+        },
+        "texto": "NED, SN 2025jus"
+      },
       "ebv": 0.0323,
       "t_max": 60815.91883544998,
       "mag_max": 16.998651343189664,
@@ -270,7 +306,13 @@
       "ra": 24.989546080691635,
       "dec": 43.784035916592615,
       "z": 0.040064,
-      "z_fuente": "NED, galaxia anfitriona WISEA J013956.95+434702.8",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J013956.95+434702.8"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J013956.95+434702.8"
+      },
       "ebv": 0.0621,
       "t_max": 60913.21903416012,
       "mag_max": 17.047393680984822,
@@ -310,7 +352,13 @@
       "ra": 31.790836706433485,
       "dec": -9.025194905179301,
       "z": 0.040587,
-      "z_fuente": "NED, galaxia anfitriona KUG 0204-092",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "KUG 0204-092"
+        },
+        "texto": "NED, galaxia anfitriona KUG 0204-092"
+      },
       "ebv": 0.0177,
       "t_max": 61003.513525849936,
       "mag_max": 17.198747576693805,
@@ -350,7 +398,13 @@
       "ra": 276.7629988140043,
       "dec": 51.05352190437344,
       "z": 0.0463,
-      "z_fuente": "NED, SN 2025mhp",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025mhp"
+        },
+        "texto": "NED, SN 2025mhp"
+      },
       "ebv": 0.0338,
       "t_max": 60838.475798800144,
       "mag_max": 17.229201915819587,
@@ -390,7 +444,13 @@
       "ra": 123.77661184081336,
       "dec": 17.822109657238663,
       "z": 0.044289,
-      "z_fuente": "NED, galaxia anfitriona WISEA J081506.71+174917.3",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J081506.71+174917.3"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J081506.71+174917.3"
+      },
       "ebv": 0.0424,
       "t_max": 61102.477833119796,
       "mag_max": 17.26329162775487,
@@ -430,7 +490,13 @@
       "ra": 212.4829422186805,
       "dec": 61.68878026746681,
       "z": 0.036713,
-      "z_fuente": "NED, SN 2025ndx",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025ndx"
+        },
+        "texto": "NED, SN 2025ndx"
+      },
       "ebv": 0.0139,
       "t_max": 60842.735505619865,
       "mag_max": 17.3836691962221,
@@ -470,7 +536,13 @@
       "ra": 276.30610828257784,
       "dec": 50.882701467065104,
       "z": 0.0461,
-      "z_fuente": "NED, SN 2025mvg",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025mvg"
+        },
+        "texto": "NED, SN 2025mvg"
+      },
       "ebv": 0.0348,
       "t_max": 60842.07107650017,
       "mag_max": 17.40436784557902,
@@ -510,7 +582,13 @@
       "ra": 126.96365308506314,
       "dec": 56.07163004875458,
       "z": 0.044941,
-      "z_fuente": "NED, galaxia anfitriona WISEA J082751.89+560415.3",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J082751.89+560415.3"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J082751.89+560415.3"
+      },
       "ebv": 0.041,
       "t_max": 60961.03538033977,
       "mag_max": 17.44306104237196,
@@ -550,7 +628,13 @@
       "ra": 306.69033797049696,
       "dec": 1.8302112220480065,
       "z": 0.062269,
-      "z_fuente": "NED, galaxia anfitriona WISEA J202645.29+014944.5",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J202645.29+014944.5"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J202645.29+014944.5"
+      },
       "ebv": 0.0875,
       "t_max": 60856.44491810021,
       "mag_max": 17.509494967887033,
@@ -590,7 +674,13 @@
       "ra": 313.9699435548359,
       "dec": 15.46176480672347,
       "z": 0.052014,
-      "z_fuente": "NED, galaxia anfitriona WISEA J205552.82+152742.1",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J205552.82+152742.1"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J205552.82+152742.1"
+      },
       "ebv": 0.0764,
       "t_max": 60921.70963792003,
       "mag_max": 17.765381414053284,
@@ -630,7 +720,13 @@
       "ra": 359.8435949954676,
       "dec": 51.94660259752525,
       "z": 0.032977,
-      "z_fuente": "NED, galaxia anfitriona WISEA J235922.59+515648.9",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J235922.59+515648.9"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J235922.59+515648.9"
+      },
       "ebv": 0.2243,
       "t_max": 60965.39749673013,
       "mag_max": 17.770078355657464,
@@ -670,7 +766,13 @@
       "ra": 277.626621107501,
       "dec": 26.83102795822435,
       "z": 0.054,
-      "z_fuente": "NED, SN 2025rvy",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025rvy"
+        },
+        "texto": "NED, SN 2025rvy"
+      },
       "ebv": 0.0848,
       "t_max": 60891.8961804001,
       "mag_max": 17.834261357727215,
@@ -710,7 +812,13 @@
       "ra": 322.744881593178,
       "dec": 22.541522329789466,
       "z": 0.0456,
-      "z_fuente": "NED, SN 2025qpv",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025qpv"
+        },
+        "texto": "NED, SN 2025qpv"
+      },
       "ebv": 0.0786,
       "t_max": 60874.47646440013,
       "mag_max": 17.883758326247108,
@@ -750,7 +858,13 @@
       "ra": 337.15935838453396,
       "dec": 0.26592846371960627,
       "z": 0.058475,
-      "z_fuente": "NED, galaxia anfitriona WISEA J222838.22+001558.0",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J222838.22+001558.0"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J222838.22+001558.0"
+      },
       "ebv": 0.0566,
       "t_max": 61204.53916615019,
       "mag_max": 17.956787463275454,
@@ -790,7 +904,13 @@
       "ra": 327.939382345872,
       "dec": -6.907694641284718,
       "z": 0.057723,
-      "z_fuente": "NED, galaxia anfitriona 2MASX J21514573-0654266",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "2MASX J21514573-0654266"
+        },
+        "texto": "NED, galaxia anfitriona 2MASX J21514573-0654266"
+      },
       "ebv": 0.0273,
       "t_max": 60934.830845110075,
       "mag_max": 17.990605949163676,
@@ -830,7 +950,13 @@
       "ra": 185.38044848294888,
       "dec": 12.519866223662016,
       "z": 0.057796,
-      "z_fuente": "NED, galaxia anfitriona VPC 0145",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "VPC 0145"
+        },
+        "texto": "NED, galaxia anfitriona VPC 0145"
+      },
       "ebv": 0.0342,
       "t_max": 61107.09159788017,
       "mag_max": 18.031720632017194,
@@ -870,7 +996,13 @@
       "ra": 332.1343815937688,
       "dec": -16.148335531120242,
       "z": 0.063,
-      "z_fuente": "NED, SN 2025qqj",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025qqj"
+        },
+        "texto": "NED, SN 2025qqj"
+      },
       "ebv": 0.0296,
       "t_max": 60878.43887819995,
       "mag_max": 18.04662195828535,
@@ -910,7 +1042,13 @@
       "ra": 317.0100870300796,
       "dec": -15.596411677774876,
       "z": 0.07,
-      "z_fuente": "NED, SN 2025qmg",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025qmg"
+        },
+        "texto": "NED, SN 2025qmg"
+      },
       "ebv": 0.0545,
       "t_max": 60875.03207079981,
       "mag_max": 18.101380143370132,
@@ -950,7 +1088,13 @@
       "ra": 356.9172041847686,
       "dec": -6.092271792573699,
       "z": 0.062937,
-      "z_fuente": "NED, galaxia anfitriona WISEA J234740.10-060531.9",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J234740.10-060531.9"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J234740.10-060531.9"
+      },
       "ebv": 0.0243,
       "t_max": 60890.28272405003,
       "mag_max": 18.170494518882432,
@@ -990,7 +1134,13 @@
       "ra": 274.0214963236582,
       "dec": 43.20330959026314,
       "z": 0.062,
-      "z_fuente": "NED, SN 2025pdd",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025pdd"
+        },
+        "texto": "NED, SN 2025pdd"
+      },
       "ebv": 0.0261,
       "t_max": 60867.11066560004,
       "mag_max": 18.188053508147643,
@@ -1030,7 +1180,13 @@
       "ra": 268.38378381643145,
       "dec": 34.4846306953461,
       "z": 0.06,
-      "z_fuente": "NED, SN 2025onz",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025onz"
+        },
+        "texto": "NED, SN 2025onz"
+      },
       "ebv": 0.0344,
       "t_max": 60858.219898599906,
       "mag_max": 18.272319594177283,
@@ -1070,7 +1226,13 @@
       "ra": 148.21056013897777,
       "dec": 39.61560960453834,
       "z": 0.045792,
-      "z_fuente": "NED, galaxia anfitriona WISEA J095250.68+393657.6",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J095250.68+393657.6"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J095250.68+393657.6"
+      },
       "ebv": 0.0126,
       "t_max": 61049.82601600019,
       "mag_max": 17.08748923834305,
@@ -1110,7 +1272,13 @@
       "ra": 41.31406963825352,
       "dec": 8.461935804736317,
       "z": 0.038256,
-      "z_fuente": "NED, galaxia anfitriona WISEA J024514.57+082738.8",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J024514.57+082738.8"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J024514.57+082738.8"
+      },
       "ebv": 0.1424,
       "t_max": 60910.202144759816,
       "mag_max": 17.18369366024731,
@@ -1150,7 +1318,13 @@
       "ra": 253.9243263210116,
       "dec": 53.374509805330504,
       "z": 0.05,
-      "z_fuente": "NED, SN 2025nzq",
+      "z_fuente": {
+        "codigo": "ned_sn",
+        "params": {
+          "nombre": "SN 2025nzq"
+        },
+        "texto": "NED, SN 2025nzq"
+      },
       "ebv": 0.0671,
       "t_max": 60856.60561810011,
       "mag_max": 17.899480872348242,
@@ -1190,7 +1364,13 @@
       "ra": 16.82959659098523,
       "dec": 36.284356361946145,
       "z": 0.063916,
-      "z_fuente": "NED, galaxia anfitriona WISEA J010719.04+361705.4",
+      "z_fuente": {
+        "codigo": "ned_host",
+        "params": {
+          "nombre": "WISEA J010719.04+361705.4"
+        },
+        "texto": "NED, galaxia anfitriona WISEA J010719.04+361705.4"
+      },
       "ebv": 0.0432,
       "t_max": 60960.817616499895,
       "mag_max": 18.217734162566163,

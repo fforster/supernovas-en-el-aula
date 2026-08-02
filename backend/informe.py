@@ -100,6 +100,8 @@ TEXTOS = {
         "eje_x": "Días desde la primera medición",
         "eje_y": "Magnitud (más chico = más brillante)",
         "no_medible": "No se pudo medir esta curva de luz automáticamente.",
+        # coma decimal: en la hoja en inglés va con punto
+        "formula_distancia": "M = −19,3     μ = m − M     d = 10^((μ+5)/5) pc",
         "de_donde_distancia": "De dónde sale la distancia (para el docente)",
         "de_donde_texto": (
             "La luz se diluye con la distancia: al alejarse d, la energía se "
@@ -149,6 +151,7 @@ TEXTOS = {
         "eje_x": "Days since the first measurement",
         "eje_y": "Magnitude (smaller = brighter)",
         "no_medible": "This light curve could not be measured automatically.",
+        "formula_distancia": "M = −19.3     μ = m − M     d = 10^((μ+5)/5) pc",
         "de_donde_distancia": "Where the distance comes from (for teachers)",
         "de_donde_texto": (
             "Light thins out with distance: after travelling d, the energy is "

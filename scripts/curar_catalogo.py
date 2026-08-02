@@ -102,6 +102,24 @@ def _cache_escribir(clave: str, valor: Any) -> None:
     (CACHE / f"{clave}.json").write_text(json.dumps(valor))
 
 
+#: De dónde salió el corrimiento al rojo.  Se guarda como código + nombre y la
+#: traducción vive en frontend/i18n; guardado como frase, la interfaz en inglés
+#: mostraba "NED, galaxia anfitriona UGC 00525".
+FUENTES_Z = {
+    "ned_sn": "NED, {nombre}",
+    "ned_host": "NED, galaxia anfitriona {nombre}",
+    "ned_otra_sn": "NED, otra supernova de la misma galaxia ({nombre})",
+}
+
+
+def _fuente(codigo: str, **params: Any) -> dict[str, Any]:
+    return {
+        "codigo": codigo,
+        "params": params,
+        "texto": FUENTES_Z[codigo].format(**params),
+    }
+
+
 def _anio_del_nombre(nombre: str) -> int | None:
     m = re.match(r"\s*SN\s*(\d{4})", nombre)
     return int(m.group(1)) if m else None
@@ -125,6 +143,8 @@ def consultar_ned(ra: float, dec: float, anio_maximo: int | None = None) -> dict
     from astropy.coordinates import SkyCoord
     from astroquery.ipac.ned import Ned
 
+    # z_fuente va como {codigo, params, texto}, igual que los avisos: es texto
+    # que se muestra en pantalla y la interfaz puede estar en inglés.
     resultado: dict[str, Any] = {
         "nombre_sn": None,
         "z": None,
@@ -164,14 +184,12 @@ def consultar_ned(ra: float, dec: float, anio_maximo: int | None = None) -> dict
             resultado["nombre_sn"] = nombre
             if z is not None:
                 resultado["z"] = z
-                resultado["z_fuente"] = f"NED, {nombre}"
+                resultado["z_fuente"] = _fuente("ned_sn", nombre=nombre)
             break
         # Otra supernova de la misma galaxia: su z sirve, su nombre no.
         if z is not None and resultado["z"] is None:
             resultado["z"] = z
-            resultado["z_fuente"] = (
-                f"NED, otra supernova de la misma galaxia ({nombre})"
-            )
+            resultado["z_fuente"] = _fuente("ned_otra_sn", nombre=nombre)
 
     if resultado["z"] is None:
         # sin z de la supernova, usamos la galaxia anfitriona más cercana con z
@@ -189,7 +207,7 @@ def consultar_ned(ra: float, dec: float, anio_maximo: int | None = None) -> dict
             resultado["host"] = mejor[1]
             resultado["z_host"] = mejor[2]
             resultado["z"] = mejor[2]
-            resultado["z_fuente"] = f"NED, galaxia anfitriona {mejor[1]}"
+            resultado["z_fuente"] = _fuente("ned_host", nombre=mejor[1])
 
     _cache_escribir(clave, resultado)
     return resultado

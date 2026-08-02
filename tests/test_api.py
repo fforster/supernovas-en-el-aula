@@ -257,3 +257,78 @@ def test_un_aviso_desconocido_falla_temprano():
 
     with pytest.raises(KeyError, match="Aviso desconocido"):
         aviso("no_existe")
+
+
+def test_z_fuente_viaja_como_codigo_no_como_frase():
+    """Regresión: "NED, galaxia anfitriona X" salía en español en modo inglés.
+
+    Lo ve el docente en el panel («Corrimiento al rojo: …»), así que tiene que
+    poder traducirse: viaja como código + nombre, igual que los avisos.
+    """
+    from backend import catalogo
+
+    for o in catalogo.objetos():
+        z = o["z_fuente"]
+        assert isinstance(z, dict), f"{o['oid']}: z_fuente es una frase, no un código"
+        assert z["codigo"] and "nombre" in z["params"]
+
+
+def test_todo_codigo_de_zfuente_esta_traducido():
+    import json
+    import re
+    from pathlib import Path
+
+    from backend import catalogo
+
+    raiz = Path(__file__).resolve().parent.parent / "frontend" / "i18n"
+    codigos = {o["z_fuente"]["codigo"] for o in catalogo.objetos()}
+    for lang in ("es", "en"):
+        d = json.loads((raiz / f"{lang}.json").read_text(encoding="utf-8"))
+        for c in codigos:
+            clave = f"zfuente.{c}"
+            assert clave in d, f"falta '{clave}' en {lang}.json"
+            assert set(re.findall(r"\{(\w+)\}", d[clave])) == {"nombre"}
+
+
+def test_el_catalogo_no_lleva_prosa_en_espanol_fuera_de_los_textos():
+    """Canario: cualquier campo nuevo con una frase en español la delata.
+
+    Los campos que SÍ pueden llevar español son los códigos (que la interfaz
+    traduce) y ``textos``, que ya es bilingüe. El resto son números, nombres
+    propios o identificadores.
+    """
+    import re
+
+    from backend import catalogo
+
+    # campos que son códigos traducidos en la interfaz, no prosa
+    CODIGOS = {"dificultad", "codigo"}
+    PALABRAS = re.compile(
+        r"\b(galaxia|anfitriona|misma|otra|supernova|del|los|las|una|para|desde)\b",
+        re.IGNORECASE,
+    )
+
+    def revisar(valor, ruta=""):
+        if isinstance(valor, dict):
+            for k, v in valor.items():
+                if k in ("textos", "texto") or k in CODIGOS:
+                    continue
+                revisar(v, f"{ruta}.{k}")
+        elif isinstance(valor, list):
+            for v in valor:
+                revisar(v, ruta)
+        elif isinstance(valor, str) and PALABRAS.search(valor):
+            raise AssertionError(
+                f"prosa en español en {ruta}: {valor!r} — "
+                "si se muestra en pantalla debe viajar como código traducible"
+            )
+
+    for o in catalogo.objetos():
+        revisar(o, o["oid"])
+
+
+def test_la_formula_de_la_hoja_usa_el_decimal_de_cada_idioma():
+    from backend.informe import TEXTOS
+
+    assert "−19,3" in TEXTOS["es"]["formula_distancia"]
+    assert "−19.3" in TEXTOS["en"]["formula_distancia"]
